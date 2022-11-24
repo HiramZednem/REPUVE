@@ -29,8 +29,7 @@ function ConsultaVehiculo() {
 const handlerSubmitForm=(e)=>{
         e.preventDefault();
 
-
-         fetch(`http://34.207.225.27:8080/vehicle/${niv}`)
+         fetch(`http://54.160.253.80:8080/vehicle/${niv}`)
         .then(response => response.json())
         .then (data => vehicleData(data))
         .catch(err=>console.log("Unexpected error, try again later"));
