@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-import registroPhoto from "../assets/images/registro-carro.png"
+import registroPhoto from "../assets/images/registro-carro.png";
 
 import "../assets/styles/normalize.css"; //Quita estilos por defecto del navegador.
 import "../assets/styles/RegistroCarro.css";
@@ -23,6 +24,22 @@ export const RegistroCarro = () => {
   const [agencyName, setAgencyName] = useState("");
   const [price, setPrice] = useState("");
   var id;
+
+  //Consulta de las agencias
+  const [agencys, setAgencys] = useState([]);
+
+  /* `${api}/agency` */
+  const getProducts = async () => {
+    await axios 
+      .get(`http://54.160.253.80:8080/agency`)
+      .then(({ data }) => setAgencys(data.data));
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  console.log(agencys)
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -159,13 +176,12 @@ export const RegistroCarro = () => {
 
             <li>
               <label htmlFor="agency">Nombre de la Agencia que Procede</label>
-              <input
-                type="text"
-                id="agency"
-                name="agency"
-                onChange={hAgencyName}
-              />
-              {/** AQUI TENGO QUE IMPLEMENTAR UN SELECT CON UNA CONSULTA A LAS AGENCIAS EN MI BD **/}
+              <select name="agency" onChange={hAgencyName}>
+                <option value="">seleccionar-agencias</option>
+                {agencys.map((agency) => {
+                  return <option  key={agency.id} value={agency.id}>{agency.name}</option>;
+                })}
+              </select>
             </li>
 
             <li>
