@@ -26,14 +26,12 @@ function CardCarViewWorker(props) {
                 <input type="text" className="edit" />        
                 <span className="info">NUMERO DE PLACA</span>  
                 <input type="text" className="edit" />       
-                <br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br />
                 <span className="info">AGENCIA DE PROCEDENCIA</span>
                 <input type="text" className="edit" />
                 <span className="info">NVI</span> 
                 <input type="text" className="edit" />        
                 <span className="info">PRECIO</span>   
-                <input type="text" className="edit" />
-                <span className="info">ID DEL VEHICULO</span>   
                 <input type="text" className="edit" />
                 <br />
                 <span className="info-dueño">DATOS DEL DUEÑO</span>  
