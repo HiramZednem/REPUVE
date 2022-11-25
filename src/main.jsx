@@ -5,5 +5,4 @@ import GeneralHome from "./pages/GeneralHome.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <ConsultaVehicular></ConsultaVehicular>
-
 )

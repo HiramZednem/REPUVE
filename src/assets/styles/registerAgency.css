@@ -1,0 +1,40 @@
+.RegisterAgency{
+    width: 100%;
+}
+.AllConten{
+    width: 100%;
+    display:flex;
+}
+.AllConten .RegisterConten{
+    width: 45%;
+    margin-top: 2%;
+}
+.AllConten .RegisterConten label{
+ margin-left: 30%;
+ font-size: 19px;
+
+}
+
+.AllConten .RegisterConten input{
+    margin-left: 30%;
+    margin-bottom: 4%;
+    border-radius: 5px;
+    padding: 1%;
+    width: 60%;
+    border: 1.89259px solid rgba(0, 0, 0, 0.2);
+}
+.AllConten .RegisterConten button{
+    margin-left: 40%;
+    border-radius: 5px;
+    padding: 1%;
+    width: 20%;
+    color: aliceblue;
+    background-color:  #650000;;
+    border: 1.89259px solid rgba(0, 0, 0, 0.2);
+}
+.Agency{
+    width: 30%;
+    height: 25%;
+    margin-top: 5%;
+}
+
