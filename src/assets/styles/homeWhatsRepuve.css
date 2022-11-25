@@ -1,0 +1,23 @@
+.container-general{
+    width: 100%;
+    display: flex;
+    background-color: #13322B;
+    color: white;
+    margin: auto;
+}
+.container-image{
+    width: 35%;
+}
+
+.container-information{
+    width: 65%;
+}
+
+.content-info{
+    width: 70%;
+    text-align: justify;
+    margin: auto;
+}
+.title-info{
+    text-align: center;
+}
