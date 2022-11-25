@@ -64,10 +64,7 @@ export const RegistroCarro = () => {
         ownerName: name,
         ownerLastName: lastname,
         price: price,
-        agencyName: agencyName,
-
-        //Temporal, luego lo modificare con select
-        agencyId: 1,
+        agencyId: agencyName,
       }),
     };
 
