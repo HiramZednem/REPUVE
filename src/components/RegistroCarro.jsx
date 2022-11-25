@@ -39,8 +39,6 @@ export const RegistroCarro = () => {
     getProducts();
   }, []);
 
-  console.log(agencys)
-
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -186,7 +184,9 @@ export const RegistroCarro = () => {
               <input type="number" id="price" name="price" onChange={hPrice} />
             </li>
           </ul>
+          <div className="button">
           <button>Registrar</button>
+          </div>
         </form>
       </div>
       <div className="imagen">
