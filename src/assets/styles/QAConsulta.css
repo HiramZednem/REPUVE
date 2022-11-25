@@ -1,0 +1,28 @@
+.container-QA{
+    width: 100%;
+    background-color: #13322B;
+}
+
+.container-QA-title{
+ color: white;
+    font-size: 2rem;
+    margin: auto;
+    font-weight: lighter;
+    text-align: justify;
+}
+
+.container-QA-images{
+    display: flex;
+    width: 100%;
+}
+.QA-img1{
+    width: 50%;
+}
+.QA-img2{
+    width: 50%;
+}
+
+.h1-cont-QA{
+    text-align: center;
+    margin: auto;
+}
