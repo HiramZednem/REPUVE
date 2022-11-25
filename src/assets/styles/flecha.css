@@ -3,7 +3,8 @@
     height: 4rem;
     margin-bottom: 2.8rem;
 }
-.container-flecha{
+
+#flechaLeft{
     background: #650000;
     height: 4rem;
     width: 4rem;
@@ -13,7 +14,7 @@
     justify-content: center;
     transition: .3s;
 }
-.container-flecha:hover{
+#flechaLeft:hover{
     background: transparent;
     border: 1px solid #650000;
 }

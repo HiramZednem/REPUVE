@@ -1,8 +1,8 @@
 /*Hooks*/
 /*Paginas Exportadas*/
-import CardCarViewPublic from './components/CardCarViewPublic';
-import Prueba from './pages/Prueba';
-import Prueba2 from './pages/Prueba2';
+import CarViewPublic from './pages/CarViewPublic';
+import CarViewWorker from './pages/CarViewWorker';
+import CarViewWorkerEdit from './pages/CarViewWorkerEdit';
 /*Imagenes Exportadas*/
 /*CSS*/
 import './App.css'
@@ -10,7 +10,7 @@ import './App.css'
 function App() {
   return (
     <>
-    <Prueba2></Prueba2>
+    <CarViewWorker></CarViewWorker>
     </>
   )
 }

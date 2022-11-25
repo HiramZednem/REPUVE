@@ -14,27 +14,25 @@ function CardCarViewPublic(props) {
             </div>
             <div className="info-card">
                 <span className="model-car">MODELO</span>
-                <span className="name-model">{props.character.model}NO</span>
+                <span className="name-model">{props.character.model}</span>
                 <br />
                 <span className="info">AÑO</span>
-                <span className="subtitle">{props.character.year}Año</span>
+                <span className="subtitle">{props.character.year}</span>
                 <span className="info">COLOR</span>
-                <span className="subtitle">{props.character.color}Color</span>
+                <span className="subtitle">{props.character.color}</span>
                 <span className="info">TIPO DE MOTOR</span>  
-                <span className="subtitle">Tipo de Motor</span>       
+                <span className="subtitle">{props.character.engineType}</span>       
                 <span className="info">TIPO DE COMBUSTIBLE</span> 
-                <span className="subtitle">Tipo de Combustible</span>        
-                <span className="info">NUMERO DE SERIE</span>
-                <span className="subtitle">Numero de Serie</span>         
+                <span className="subtitle">{props.character.fuelType}</span>             
                 <span className="info">NUMERO DE PLACA</span>  
-                <span className="subtitle">Numero de Placa</span>
+                <span className="subtitle">{props.character.plateNumber}</span>
                 <span className="info">AGENCIA DE PROCEDENCIA</span>
-                <span className="subtitle">Agencia Procedencia</span>       
+                <span className="subtitle">{props.character.agencyName}</span>       
                 <br /><br /><br /><br /><br /><br /><br /><br />
                 <span className="info">NVI</span> 
-                <span className="subtitle">NVI</span>        
+                <span className="subtitle">{props.character.vehicleNumberId}</span>        
                 <span className="info">PRECIO</span>   
-                <span className="subtitle">Precio</span>     
+                <span className="subtitle">{props.character.price}</span>     
             </div>
         </div>
     );

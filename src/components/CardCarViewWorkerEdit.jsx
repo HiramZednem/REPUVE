@@ -1,13 +1,10 @@
-/*Hooks*/
-/*Paginas Exportadas*/
 /*Imagenes Exportadas*/
 import carGrey from '../assets/images/car-metalic.svg';
 import edit from "../assets/images/Edit.svg";
 /*CSS*/
 import '../assets/styles/cardCarViewPublic.css';
-
+/*FALTA HACER QUE ACTUALICE LOS DATOS DEL VEHICULO*/
 function CardCarViewWorker(props) {
-
     return (  
         <div className="card-car-view-container">
             <div className="image-card">
@@ -15,37 +12,37 @@ function CardCarViewWorker(props) {
             </div>
             <div className="info-card">
                 <span className="model-car">MODELO</span>
-                <span className="name-model">{props.character.model}</span>
+                <input type="text" />
                 <br />
                 <span className="info">AÑO</span>
-                <span className="subtitle">{props.character.year}</span>
+                <input type="text" className="edit" />
                 <span className="info">COLOR</span>
-                <span className="subtitle">{props.character.color}</span>
+                <input type="text" className="edit" />
                 <span className="info">TIPO DE MOTOR</span>  
-                <span className="subtitle">{props.character.engineType}</span>    
+                <input type="text" className="edit" />       
                 <span className="info">TIPO DE COMBUSTIBLE</span> 
-                <span className="subtitle">{props.character.fuelType}</span>           
+                <input type="text" className="edit" />        
+                <span className="info">NUMERO DE SERIE</span>
+                <input type="text" className="edit" />        
                 <span className="info">NUMERO DE PLACA</span>  
-                <span className="subtitle">{props.character.plateNumber}</span>
-                <span className="info">AGENCIA DE PROCEDENCIA</span>
-                <span className="subtitle">{props.character.agencyName}</span>      
+                <input type="text" className="edit" />       
                 <br /><br /><br /><br /><br /><br /><br />
+                <span className="info">AGENCIA DE PROCEDENCIA</span>
+                <input type="text" className="edit" />
                 <span className="info">NVI</span> 
-                <span className="subtitle">{props.character.vehicleNumberId}</span>        
+                <input type="text" className="edit" />        
                 <span className="info">PRECIO</span>   
-                <span className="subtitle">{props.character.price}</span>
+                <input type="text" className="edit" />
                 <span className="info">ID DEL VEHICULO</span>   
-                <span className="subtitle">{props.character.id}</span>
+                <input type="text" className="edit" />
                 <br />
                 <span className="info-dueño">DATOS DEL DUEÑO</span>  
                 <span className="datos-dueño">Nombre del Dueño</span>
-                <span className="name-owner">{props.character.ownerName}</span> 
+                <input type="text" className="edit-owner" /> 
                 <span className="datos-dueño">Apellidos del Dueño</span>
-                <span className="name-owner">{props.character.ownerLastName}</span>     
+                <input type="text" className="edit-owner" />  
             </div>
-            <div className="container-flecha">
-                <img src={edit} alt="" />
-            </div>
+            <button className="container-flecha"><img src={edit} alt="" /></button>
         </div>
     );
 }

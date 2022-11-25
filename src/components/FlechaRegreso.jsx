@@ -7,7 +7,7 @@ function FlechaRegreso() {
     return (
         <div className="container-flecha-alineacion">
             <div className="container-flecha">
-                <img src={flecha} alt="flecha" id="flechaleft" />
+                <button id="flechaLeft"><img src={flecha} alt="flecha" id="flechaleft" /></button>
             </div>
         </div>
     );
