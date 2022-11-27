@@ -43,7 +43,7 @@ function WorkerLogInComponent() {
 
             })}
 
-        fetch('54.160.253.80:8080/worker/signIn',option)
+        fetch('http://54.160.253.80:8080/worker/signIn',option)
             .then(response=>response.json())
             .then(data =>workerData(data))
             .catch(err=>console.log("Unexpected error, try again later"));

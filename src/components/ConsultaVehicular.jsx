@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import ConsultaVehicularInform from "./ConsultaVehicularInform.jsx";
 import {useState} from "react";
 import searchIcon from '../assets/images/searchIcon.png'
+import {useNavigate} from "react-router-dom";
 
 
 
