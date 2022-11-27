@@ -2,7 +2,7 @@ import '../assets/styles/registerAgency.css'
 import Agency from '../assets/images/Agency.png'
 import { useState } from 'react';
 
-function RegisterAgency() {
+function AgencyRegistry() {
 
     const [nameAgency, setNameAgency] =useState('');
     const [address, setAddress] =useState('');
@@ -79,4 +79,4 @@ function RegisterAgency() {
      );
 }
 
-export default RegisterAgency;
+export default AgencyRegistry;
