@@ -1,16 +1,13 @@
 .container-consultaVehicular{
     display: flex;
     width: 100%;
-
 }
-
 .container-info{
     align-self: center;
     justify-self: center;
     width: 65%;
     text-align: center;
 }
-
 .bttn-consult{
     background-color: #650000;
     color: white;
@@ -31,3 +28,90 @@
     height: auto;
 }
 
+/*CSS del rediseñp*/
+.container-consultaVehicular{
+}
+.consulta-vehicular{
+    display: flex;
+    justify-content: center;
+}
+.information{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.consulta{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 6rem;
+    text-align: center;
+}
+.vehicular{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 7.5rem;
+    text-transform: uppercase;
+}
+
+#imagencoche{
+    width: 112.5%;
+}
+.button-consultar{
+    width: 28.9rem;
+    height: 3.6rem;
+    background: #650000;
+    border-radius: .5rem;
+    border-color:#650000;
+    color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.80513rem;
+    line-height: 2.2rem;
+    transition: .5s;
+}
+.button-consultar:hover{
+    background-color: white;
+    color:#650000;
+}
+
+/*Tablet*/
+@media only screen and (max-width:768px){
+    .consulta{
+        font-size: 3rem;
+    }
+    .vehicular{
+        font-size: 4.5rem;
+    }
+    .button-consultar{
+        height: 2.6rem;
+        width: 8.9rem;
+        font-size: 1rem;
+    }
+    #imagencoche{
+        width: 107.8%;
+    }
+    
+}
+
+/*Movil*/
+@media only screen and (max-width: 600px){
+    .consulta{
+        font-size: 2rem;
+    }
+    .vehicular{
+        font-size: 3.5rem;
+    }
+    .button-consultar{
+        height: 2.6rem;
+        width: 8.9rem;
+        font-size: 1rem;
+    }
+    #imagencoche{
+        width: 112.5%;
+    }
+    
+}

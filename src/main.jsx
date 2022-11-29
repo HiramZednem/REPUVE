@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import App from './App.jsx';
 import ConsultaVehicular from "./pages/ConsultaVehicular.jsx";
 import GeneralHome from "./pages/GeneralHome.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <ConsultaVehicular></ConsultaVehicular>
+    <App></App>
 )

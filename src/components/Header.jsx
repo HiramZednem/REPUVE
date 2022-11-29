@@ -1,21 +1,29 @@
-import userIcon from "../assets/images/user-icon.png"
-import gobiernoLogo from "../assets/images/gobierno-logo.png"
+
 
 import "../assets/styles/normalize.css" //Quita estilos por defecto del navegador.
-import "../assets/styles/Header.css"
+import "../assets/styles/header.css"
+//Imagenes Importadas
+import gobiernoLogo from "../assets/images/GobiernoMexico.svg";
+import userIcon from "../assets/images/MaleUser.svg";
 
-export const Header = () => {
+function Header() {
     return (
-        <header className="header-principal">
-            <div className="logo">
-                <img src={gobiernoLogo} alt="Logo Gobierno de México" />
+        <nav className="header">
+            <div className="container">
+                <div className="row">
+                    <div className="col-2 logo">
+                        <img src={gobiernoLogo} alt="" id="LogoMx" />
+                    </div>
+                    <div className="col-2 opciones">
+                        <a href="" className="link"> <p className="enlaces">Consulta Vehicular</p></a>
+                    </div>
+                    <div className="col-7"></div>
+                    <div className="col-1 icons-div">
+                        <img src={userIcon} alt="" id="icon-perfil"/>
+                    </div>
+                </div>
             </div>
-            <div className="opciones">
-                <a href="#">Registro Vehicular</a>
-                <a href="#">Lista Vehicular</a>
-                <a href="#">Consulta Vehicular</a>
-                <a href="#"> <img src={userIcon} alt="User icon" /> </a>
-            </div>
-        </header>
-    )
+        </nav>
+    );
 }
+export default Header;

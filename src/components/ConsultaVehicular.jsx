@@ -1,9 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.css'
 import '../assets/styles/cosultaVehicular.css'
-import Swal from "sweetalert2";
 import ConsultaVehicularInform from "./ConsultaVehicularInform.jsx";
 import {useState} from "react";
+//Imagenes Importadas
+import lupa from "../assets/images/lupa.svg";
 import searchIcon from '../assets/images/searchIcon.png'
+import fotoBusqueda from "../assets/images/image-consulta-vehicular1.svg";
 
 
 
@@ -38,25 +39,47 @@ const handlerSubmitForm=(e)=>{
 
     return(
         <>
-            <div className={"head-title"}>
-                <img src={searchIcon} width={"2.5%"} height={"2.5%"}/>
-                <h1 className={"h1-cont-consulta"}>Consulta Vehicular</h1>
-            </div><br/>
-
-            <div className={"info-mssg"}>
-                <h2 className={"h2-cont-consult"}>&nbsp;Por favor ingrese los datos tal cual aparece
-                    en su tarjeta de circulacion&nbsp;</h2>
-            </div>
-            <br/><br/><br/>
-
-            <form className={"form-nivCheck"} onSubmit={handlerSubmitForm}>
-                <div className="form-floating mb-3">
-                    <input onChange={handlerNivInput} type="text" className="form-control" id="floatingInput" placeholder="***********"/>
-                        <label htmlFor="floatingInput">Numero de Identificacion Vehicular(NIV)</label>
+            <div className="container body-busqueda">
+                <div className="row">
+                    <div className="col-5 encabezado-consulta">
+                        <span className="title-consulta">
+                        <img src={lupa} id="lupa"/>Consulta Vehicular</span>
+                    </div>
+                    <hr />
                 </div>
-                <button className={"bttn-searchForm"}>Buscar</button>
-            </form>
-            <br/>
+                <div className="row">
+                    <div className="col-1"></div>
+                    <div className="div-10">
+                        <div className="alerta">
+                            <span className="alerta-info">POR FAVOR INGRESE LOS DATOS COMO SE LE INDICA</span>
+                        </div>
+                    </div>
+                    <div className="col-1"></div>
+                </div>
+                <div className="row">
+                    <div className="col-1"></div>
+                    <div className="col-6 formulario">
+                        <form action="" onSubmit={handlerSubmitForm}>
+                            <div className="row">
+                                <p className="ingrese-nvi">Ingrese Numero de Indetificacion Vehicular (NVI)</p>
+                                <input id="input-busqueda" onChange={handlerNivInput} type="text" className="form-control" placeholder="***********"/>
+                            </div>
+                            <br />
+                            <div className="row boton-buscar">
+                                <button className="buscar-vehiculo">Buscar</button>
+                            </div>
+                            <br /><br /><br /><br />
+                            <div className="row ley">
+                                <span className="ley-info">Este servicio de consulta es GRATUITO de acuerdo con el Artículo 6 de la Ley del Registro Público Vehicular.</span>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="col-4">
+                        <img src={fotoBusqueda} id="foto-consultaVehicular"/>
+                    </div>
+                    <div className="col-1"></div>
+                </div>
+            </div>
 
               {/*{*/}
               {/*data && data?.map(vehicle=>*/}
@@ -69,8 +92,6 @@ const handlerSubmitForm=(e)=>{
               {/*          color={vehicle.color}*/}
               {/*      />*/}
               {/*  )}*/}
-
-            <ConsultaVehicularInform></ConsultaVehicularInform>
         </>
     );
 
