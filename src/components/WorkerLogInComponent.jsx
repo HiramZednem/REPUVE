@@ -30,20 +30,30 @@ function WorkerLogInComponent() {
     const handlerForm = (e) => {
         e.preventDefault();
 
-        var formData =new formData();
-        formData.append('email',email);
-        formData.append('password',password)
-
-
-        fetch('54.160.253.80:8080/worker/signIn',{
-            method:'GET',
-            body:formData
+        const dataJSON =  JSON.stringify({
+            email:email,
+            password:password
         })
-            .then(response=>response.json())
-            .then(data =>workerData(data))
-            .catch(err=>console.log("Unexpected error, try again later"));
 
-    }
+        console.log(dataJSON)
+
+
+        const option = {
+            method: "POST",
+            headers: {
+                Accept: "*/*",
+                "Content-Type": "application/json",
+                Connection: "keep-alive",
+            },
+            body: dataJSON,
+        };
+
+        fetch(`http://localhost:8080/worker/signIn`, option)
+            .then((response) => response.json())
+            .then((data) => console.log(data))
+            .catch((err) => console.log(err));
+    };
+
 
 
     return(
@@ -55,14 +65,14 @@ function WorkerLogInComponent() {
                     <form className={"logInForm"} onSubmit={handlerForm}>
                         <img className={"userIcon"} src={maleUser}></img>
                         <div className="form-floating mb-3">
-                            <input onSubmit={handlerMailInput} type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
+                            <input onChange={handlerMailInput} type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
                             <label htmlFor="floatingInput">Email address</label>
                         </div>
                         <div className="form-floating">
                             <input onChange={handlerPasswordInput} type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
                             <label htmlFor="floatingPassword">Password</label>
                         </div>
-                        <button type={"button"} className={"bttn-access"}> ENTRAR</button>
+                        <button  className={"bttn-access"} > ENTRAR</button>
 
                     </form>
                 </div>
