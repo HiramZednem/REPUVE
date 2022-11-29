@@ -10,9 +10,9 @@ function HeaderWorker() {
             <div className='greenPartHeader'>
                 <img className='GobiernoIcon' src={GobiernoIcon}/>
                 <ul className='navegar'>
-                    <li><a href="">Registro Vehicular</a></li>
-                    <li><a href="">Lista Vehicular</a></li>
-                    <li><a href="">Consulta Vehicular</a></li>
+                    <li><a href="/gob/registry/vehicle">Registro Vehicular</a></li>
+                    <li><a href="/gob/vehicular/catalog">Lista Vehicular</a></li>
+                    <li><a href="/consultaVehicular">Consulta Vehicular</a></li>
                 </ul>
                 <img className='InicioS' src={InicioS} />
             </div>
@@ -28,10 +28,10 @@ function HeaderWorker() {
                 <div className='Opciones'>
                     <img className='Home' src={Home} />
                     <ul className='Acciones'>
-                        <li><a href="">Registro Vehicular</a></li>
-                        <li><a href="">Consulta Vehicular</a></li>
-                        <li><a href="">Lista de Vehiculos</a></li>
-                        <li><a href="">Registro Agencia</a></li>
+                        <li><a href="/gob/registry/vehicle">Registro Vehicular</a></li>
+                        <li><a href="/consultaVehicular">Consulta Vehicular</a></li>
+                        <li><a href="/gob/vehicular/catalog">Lista de Vehiculos</a></li>
+                        <li><a href="/gob/registry/vehicle">Registro Agencia</a></li>
                     </ul>
                 </div>
            </div>

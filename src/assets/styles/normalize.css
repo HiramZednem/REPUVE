@@ -11,6 +11,7 @@
  html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
   }
   
   /* Sections

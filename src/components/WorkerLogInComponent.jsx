@@ -2,8 +2,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import '../assets/styles/workerLogIn.css'
 import maleUser from '../assets/images/Male User.png'
 import {useState} from "react";
-import Swal from "sweetalert2";
-
 
 function WorkerLogInComponent() {
     const [email, setEmail]=useState('');
@@ -25,6 +23,7 @@ function WorkerLogInComponent() {
         }else {
             setData(data.data)
             console.log(data)
+            alert('eui')
         }
     }
 
@@ -43,7 +42,7 @@ function WorkerLogInComponent() {
 
             })}
 
-        fetch('http://54.160.253.80:8080/worker/signIn',option)
+        fetch('54.160.253.80:8080/worker/signIn',option)
             .then(response=>response.json())
             .then(data =>workerData(data))
             .catch(err=>console.log("Unexpected error, try again later"));
@@ -55,26 +54,26 @@ function WorkerLogInComponent() {
         <>
 
             <div className={"logInComp"}>
-            <div className={"container-form"}>
-                <h1 className={"h1-content"}>Bienvenido</h1>
-                <form className={"logInForm"} onSubmit={handlerForm}>
-                    <img className={"userIcon"} src={maleUser}></img>
-                    <div className="form-floating mb-3">
-                        <input onSubmit={handlerMailInput} type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
+                <div className={"container-form"}>
+                    <h1 className={"h1-content"}>Bienvenido</h1>
+                    <form className={"logInForm"} onSubmit={handlerForm}>
+                        <img className={"userIcon"} src={maleUser}></img>
+                        <div className="form-floating mb-3">
+                            <input onSubmit={handlerMailInput} type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
                             <label htmlFor="floatingInput">Email address</label>
-                    </div>
-                    <div className="form-floating">
-                        <input onChange={handlerPasswordInput} type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
+                        </div>
+                        <div className="form-floating">
+                            <input onChange={handlerPasswordInput} type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
                             <label htmlFor="floatingPassword">Password</label>
-                    </div>
-                    <button type={"button"} className={"bttn-access"}> ENTRAR</button>
+                        </div>
+                        <button type={"button"} className={"bttn-access"}> ENTRAR</button>
 
-                </form>
-            </div>
+                    </form>
+                </div>
 
-            <div className={"container-img-section"}>
-                <img/>
-            </div>
+                <div className={"container-img-section"}>
+                    <img/>
+                </div>
             </div>
 
         </>

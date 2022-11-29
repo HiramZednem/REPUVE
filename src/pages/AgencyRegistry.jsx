@@ -49,7 +49,8 @@ function AgencyRegistry() {
 
 
 
-    return ( 
+    return (
+        <>
         <div className='RegisterAgency'>
             <div className='AllConten'>
                 <form className="RegisterConten" onSubmit={handleSubmit}>
@@ -76,7 +77,8 @@ function AgencyRegistry() {
                 <img className='Agency' src={Agency} />
             </div>
         </div>
-     );
+     </>
+            );
 }
 
 export default AgencyRegistry;

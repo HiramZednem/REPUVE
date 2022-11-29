@@ -1,11 +1,11 @@
 import Footer from "../components/Footer.jsx";
-import HomeAvisoWorker from "../components/HomeAvisoWorker";
-
+import HeaderWorker from "../components/HeaderWorker.jsx";
+import WorkerHomeAviso from "../components/WorkerHomeAviso.jsx";
 function WorkerHome() {
     return(
         <>
-            <WorkerHome></WorkerHome>
-            <HomeAvisoWorker></HomeAvisoWorker>
+            <HeaderWorker></HeaderWorker>
+          <WorkerHomeAviso></WorkerHomeAviso>
             <Footer></Footer>
         </>
     )

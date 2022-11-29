@@ -5,6 +5,7 @@ import ConsultaVehicularInform from "./ConsultaVehicularInform.jsx";
 import {useState} from "react";
 import searchIcon from '../assets/images/searchIcon.png'
 import {useNavigate} from "react-router-dom";
+import VehicleCard from "./VehicleCard.jsx";
 
 
 
@@ -58,18 +59,18 @@ const handlerSubmitForm=(e)=>{
                 <button className={"bttn-searchForm"}>Buscar</button>
             </form>
             <br/>
+            {
+                data && data.results.map(vehicle=>
+                    <VehicleCard
+                        key={vehicle.id}
+                        brand={vehicle.brand}
+                        color={vehicle.color}
+                        model={vehicle.model}
+                        year={vehicle.year}
+                        vehiclePicture={vehicle.vehiclePicture}
+                    />)
+            }
 
-              {/*{*/}
-              {/*data && data?.map(vehicle=>*/}
-              {/*      <VehicleCard*/}
-              {/*          key={vehicle.id}*/}
-              {/*          brand={vehicle.brand}*/}
-              {/*vehiclePic={vehicle.vehiclePicture}*/}
-              {/*          model={vehicle.model}*/}
-              {/*          year={vehicle.year}*/}
-              {/*          color={vehicle.color}*/}
-              {/*      />*/}
-              {/*  )}*/}
 
             <ConsultaVehicularInform></ConsultaVehicularInform>
         </>
