@@ -24,7 +24,7 @@ function ConsultaVehiculo() {
             })
         }else {
             setData(data.data)
-            console.log(data)
+            console.log(data.data)
         }
     }
 
@@ -59,18 +59,20 @@ const handlerSubmitForm=(e)=>{
                 <button className={"bttn-searchForm"}>Buscar</button>
             </form>
             <br/>
+            <div className={"vehicleCard"}>
             {
-                data && data.results.map(vehicle=>
+                data?.map(vehicle=>(
                     <VehicleCard
-                        key={vehicle.id}
-                        brand={vehicle.brand}
-                        color={vehicle.color}
-                        model={vehicle.model}
-                        year={vehicle.year}
-                        vehiclePicture={vehicle.vehiclePicture}
-                    />)
+                key={vehicle.id}
+                brand={vehicle.brand}
+                vehiclePicture={vehicle.vehiclePicture}
+                model={vehicle.model}
+                year={vehicle.year}
+                color={vehicle.color}
+                    />
+                ))
             }
-
+            </div>
 
             <ConsultaVehicularInform></ConsultaVehicularInform>
         </>

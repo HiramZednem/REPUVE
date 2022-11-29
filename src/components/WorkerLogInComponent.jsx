@@ -30,19 +30,15 @@ function WorkerLogInComponent() {
     const handlerForm = (e) => {
         e.preventDefault();
 
-        const option ={
+        var formData =new formData();
+        formData.append('email',email);
+        formData.append('password',password)
+
+
+        fetch('54.160.253.80:8080/worker/signIn',{
             method:'GET',
-            headers:{
-                'Accept':'application/json',
-                'Content-type':'application/json'
-            },
-            body:JSON.stringify({
-                email:email,
-                password:password
-
-            })}
-
-        fetch('54.160.253.80:8080/worker/signIn',option)
+            body:formData
+        })
             .then(response=>response.json())
             .then(data =>workerData(data))
             .catch(err=>console.log("Unexpected error, try again later"));

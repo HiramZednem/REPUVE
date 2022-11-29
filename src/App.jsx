@@ -1,7 +1,7 @@
 import React, {useContext, useState} from "react";
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import AuthContext from "./contexts/AuthContext.jsx";
-import AgencyRegistry from "./pages/AgencyRegistry.jsx";
+import AgencyRegistry from "./components/AgencyRegistry.jsx";
 import ConsultaVehicular from "./pages/ConsultaVehicular.jsx";
 import GeneralHome from "./pages/GeneralHome.jsx";
 import GeneralVehicleView from "./pages/GeneralVehicleView.jsx";
@@ -47,9 +47,9 @@ function App() {
 export default App;
 
 
-function Private({children}){
-    const {auth} = useContext(AuthContext)
-
-    return (auth ? children : <Navigate to='/home'/>)
-
-}
+// function Private({children}){
+//     const {auth} = useContext(AuthContext)
+//
+//     return (auth ? children : <Navigate to='/home'/>)
+//
+// }
