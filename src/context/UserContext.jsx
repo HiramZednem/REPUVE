@@ -1,5 +1,20 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const UserContext = createContext(null);
+export const UserContext = createContext();
 
-export default UserContext;
+
+export const UserDataContext = ({children}) =>{
+    
+    //Mi fetch aqui
+const [user,setUser] = useState({
+    name: "Axel",
+    lastname: "",
+    phone: "",
+})
+
+return(
+    <UserContext.Provider value={{user}}>
+        {children}
+    </UserContext.Provider>
+);
+}

@@ -3,8 +3,14 @@ import GobiernoIcon from '../assets/images/GobiernoDeMexico.png'
 import InicioS from '../assets/images/inicioS.png'
 import Perfil from '../assets/images/perfil.png'
 import Home from '../assets/images/Home.png'
+import { useContext } from 'react'
+import { UserContext } from '../context/UserContext'
 
 function HeaderWorker() {
+const {user} = useContext(UserContext);
+console.log(user)
+
+    
     return ( 
         <div className='HeaderWorker'>
             <div className='greenPartHeader'>
@@ -20,7 +26,10 @@ function HeaderWorker() {
                 <div className='userconter'>
                     <div className='hola'>
                         <p className='saludo'>Hola de Nuevo!</p>
-                        <p className='nombre'>nombre del usuario</p>
+                        {/* AQUI */}
+
+                        <p className='nombre'>nombre del usuario
+                        {user.name}</p>
                     </div>
                     <img className='Perfil' src={Perfil}/>
                 </div>

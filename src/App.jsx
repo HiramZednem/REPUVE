@@ -2,16 +2,21 @@
 // import UserContext from "../context/UserContext";
 
 
-// import HeaderWorker from "./components/HeaderWorker";
-import RegisterAgency from "./pages/RegisterAgency";
+import HeaderWorker from "./components/HeaderWorker";
+import { UserContext, UserDataContext } from "./context/UserContext";
+//import RegisterAgency from "./pages/RegisterAgency";
+import { useContext } from "react";
 
 
 function App() {
   // const [isLogued, setIsLogued] = useState(false)
 
    return (  
-        // <HeaderWorker/>
-    <RegisterAgency/>
+    <UserDataContext>
+            <HeaderWorker/>
+    </UserDataContext>
+
+    //<RegisterAgency/>
 
   //   <UserContext.Provider value={{ isLogued, setIsLogued }}>
   //   </UserContext.Provider>
