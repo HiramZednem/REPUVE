@@ -2,12 +2,15 @@ import 'bootstrap/dist/css/bootstrap.css'
 import '../assets/styles/workerLogIn.css'
 import maleUser from '../assets/images/Male User.png'
 import {useState} from "react";
+import {Navigate, useNavigate} from "react-router-dom";
+import Swal from "sweetalert2";
 
 function WorkerLogInComponent() {
     const [email, setEmail]=useState('');
     const [password, setPassword]=useState('');
     const [data, setData]=useState(null);
-
+    const navigate=useNavigate();
+    const [auth, setAuth]=useState(null);
 
     const handlerMailInput = (e) => setEmail(e.target.value);
     const handlerPasswordInput = (e) =>setPassword(e.target.value);
@@ -23,7 +26,8 @@ function WorkerLogInComponent() {
         }else {
             setData(data.data)
             console.log(data)
-            alert('eui')
+            setAuth(data.data)
+        navigate('/gob/home')
         }
     }
 
@@ -48,10 +52,17 @@ function WorkerLogInComponent() {
             body: dataJSON,
         };
 
-        fetch(`http://localhost:8080/worker/signIn`, option)
+        fetch(`http://18.215.246.106:8080/worker/signIn`, option)
             .then((response) => response.json())
-            .then((data) => console.log(data))
-            .catch((err) => console.log(err));
+            .then((data) => workerData(data))
+            .catch((err) =>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'User not Found!',
+                    footer: '<b>error?</b><br/><span>Verifique que la informacion sea correcta e intente de nuevo</span>'
+                })
+            );
     };
 
 

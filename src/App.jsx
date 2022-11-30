@@ -1,7 +1,5 @@
 import React, {useContext, useState} from "react";
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
-import AuthContext from "./contexts/AuthContext.jsx";
-import AgencyRegistry from "./components/AgencyRegistry.jsx";
 import ConsultaVehicular from "./pages/ConsultaVehicular.jsx";
 import GeneralHome from "./pages/GeneralHome.jsx";
 import GeneralVehicleView from "./pages/GeneralVehicleView.jsx";
@@ -12,15 +10,14 @@ import WorkerLogIn from "./pages/WorkerLogIn.jsx";
 import WorkerRegistrer from "./pages/WorkerRegistrer.jsx";
 import WorkerVehicleView from "./pages/WorkerVehicleView.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
-import {Provider} from "react-redux";
-import RegistryAgency from "./pages/RegistryAgency";
+import RegistryAgency from "./pages/RegistryAgency.jsx";
+import AuthContext from "./contexts/AuthContext.js";
 
 function App() {
-    const [auth, setAuth]=useState(null);
+    const [auth, setAuth]=useState(false);
         return (
         <BrowserRouter>
-            {/*<AuthContext.provider value={{auth,setAuth}}>*/}
-            {/*    <Provider store={Store}></Provider>*/}
+            <AuthContext.Provider value={{auth, setAuth}}>
                 <Routes>
                     <Route index element={<GeneralHome/>}/>
                     <Route path={'/home'} element={<GeneralHome/>}/>
@@ -29,17 +26,15 @@ function App() {
                     <Route path={'/signUp'} element={<WorkerRegistrer/>}/>
                     <Route path={'/signIn'} element={<WorkerLogIn/>}/>
                     {/*///*/}
+                    <Route element={<PrivateRoute/>}>
                     <Route path={'/gob/home'} element={<WorkerHome/>}/>
                     <Route path={'/gob/registry/vehicle'} element={<RegistryAgency/>}/>
                     <Route path={'/gob/vehicle/consult'} element={<WorkerVehicleView/>}/>
                     <Route path={'/gob/vehicular/catalog'} element={<VehicularList/>}/>
                     <Route path={'/gob/registry/vehicle'} element={<VehicularRegistry/>}/>
-                    {/*<Route element={<PrivateRoute/>}>*/}
-
-                    {/*</Route>*/}
-
+                    </Route>
                 </Routes>
-            {/*</AuthContext.provider>*/}
+            </AuthContext.Provider>
         </BrowserRouter>
         );
 
