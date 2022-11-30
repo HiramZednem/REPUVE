@@ -31,7 +31,7 @@ function HeaderWorker() {
                         <li><a href="/gob/registry/vehicle">Registro Vehicular</a></li>
                         <li><a href="/consultaVehicular">Consulta Vehicular</a></li>
                         <li><a href="/gob/vehicular/catalog">Lista de Vehiculos</a></li>
-                        <li><a href="/gob/registry/vehicle">Registro Agencia</a></li>
+                        <li><a href="/gob/registry/agency">Registro Agencia</a></li>
                     </ul>
                 </div>
            </div>

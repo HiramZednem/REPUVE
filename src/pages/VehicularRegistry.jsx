@@ -1,11 +1,11 @@
-import WorkerHome from "./WorkerHome.jsx";
 import Footer from "../components/Footer.jsx";
 import {RegistroCarro} from "../components/RegistroCarro";
+import HeaderWorker from "../components/HeaderWorker.jsx";
 
 function VehicularRegistry() {
     return(
         <>
-            <WorkerHome></WorkerHome>
+            <HeaderWorker></HeaderWorker>
             <RegistroCarro></RegistroCarro>
             <Footer></Footer>
         </>

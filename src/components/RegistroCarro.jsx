@@ -7,7 +7,7 @@ import "../assets/styles/normalize.css"; //Quita estilos por defecto del navegad
 import "../assets/styles/RegistroCarro.css";
 
 export const RegistroCarro = () => {
-  const api = "http://54.160.253.80:8080";
+  const api = "18.215.246.106:8080";
 
   //Variables para registro;
   const [model, setModel] = useState("");

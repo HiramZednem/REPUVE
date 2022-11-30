@@ -11,4 +11,4 @@ function registryAgency() {
             <Footer></Footer>
         </>
     )
-}export default registryAgency();
+}export default registryAgency;

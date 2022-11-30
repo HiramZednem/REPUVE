@@ -1,5 +1,5 @@
 
-function VehicleCard(brand, vehiclePicture, model, year, color) {
+function VehicleCard({brand, vehiclePicture, model, year, color}) {
     return(
         <>
             <div className={"vehicleCard"}>
@@ -8,6 +8,7 @@ function VehicleCard(brand, vehiclePicture, model, year, color) {
                     <span>Modelo: {model}</span>
                     <span>Año: {year}</span>
                     <span>color: {color}</span>
+                    {/*<img src={vehiclePicture}/>*/}
                 </div>
             </div>
         </>

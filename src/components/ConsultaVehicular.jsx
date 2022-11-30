@@ -31,7 +31,7 @@ function ConsultaVehiculo() {
 const handlerSubmitForm=(e)=>{
         e.preventDefault();
 
-         fetch(`http://54.160.253.80:8080/vehicle/${niv}`)
+         fetch(`http://18.215.246.106:8080/vehicle/${niv}`)
         .then(response => response.json())
         .then (data => vehicleData(data))
         .catch(err=>console.log("Unexpected error, try again later"));
@@ -59,20 +59,19 @@ const handlerSubmitForm=(e)=>{
                 <button className={"bttn-searchForm"}>Buscar</button>
             </form>
             <br/>
-            <div className={"vehicleCard"}>
             {
-                data?.map(vehicle=>(
-                    <VehicleCard
+                data?.map(vehicle=>
+                <VehicleCard
                 key={vehicle.id}
                 brand={vehicle.brand}
-                vehiclePicture={vehicle.vehiclePicture}
                 model={vehicle.model}
                 year={vehicle.year}
                 color={vehicle.color}
-                    />
-                ))
+                vehiclePicture={vehicle.vehiclePicture}
+                />
+                )
+
             }
-            </div>
 
             <ConsultaVehicularInform></ConsultaVehicularInform>
         </>

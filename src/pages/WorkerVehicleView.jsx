@@ -1,11 +1,11 @@
-import WorkerHome from "./WorkerHome.jsx";
 import Footer from "../components/Footer.jsx";
 import WorkerVehicleCard from "../components/WorkerVehicleCard.jsx";
+import HeaderWorker from "../components/HeaderWorker.jsx";
 
 function WorkerVehicleView() {
     return(
         <>
-            <WorkerHome></WorkerHome>
+            <HeaderWorker></HeaderWorker>
             <WorkerVehicleCard></WorkerVehicleCard>
             <Footer></Footer>
         </>
