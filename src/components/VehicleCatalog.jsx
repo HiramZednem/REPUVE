@@ -1,41 +1,48 @@
 import {useEffect, useState} from "react";
 import VehicleCard from "./VehicleCard.jsx";
+import Swal from "sweetalert2";
 
 function VehicleCatalog() {
-const [data, setData]=useState(null);
+const [data, setData]=useState([]);
 const [pages,setPages]=useState(0);
 
-    useEffect(() => {
-        return () => {
-            fetch(`http://18.215.246.106:8080/vehicle/page/${pages}`)
-                .then (response => response.json())
-                .then(data=>setData(data.data))
-                .catch(err=>console.log(err))
+useEffect(()=>{
+    fetch(`http://18.215.246.106:8080/vehicle/page/${pages}`)
+        .then(response=>response.json())
+        .then(data=>setData(data.content))
+        .catch(err=>console.log(err))
+},[])
 
-        };
-    }, [pages]);
 
 
     return(
         <>
-            <div className={"vehicles-container"}>
-    `   {
-                data && data.results.map( vehicleCard=>(
-                    <VehicleCard
-                key={vehicleCard.id}
-                brand={vehicleCard.brand}
-                model={vehicleCard.model}
-                year={vehicleCard.year}
-                color={vehicleCard.color}
-                vehiclePicture={vehicleCard.vehiclePicture}
-                />
-                ))
-
-            }
+            <div className={"cards"}>
+                {
+                    data && data.map( v =>(
+                        <VehicleCard
+                    key={v.id}
+                    brand={v.brand}
+                    model={v.model}
+                    year={v.year}
+                    color={v.color}
+                    vehiclePicture={v.vehiclePicture}
+                        />
+                    ))
+                }
             </div>
+
+
             <div className={"bttns"}>
-                <button onClick={()=>setPages(pages+1)}>Next</button>
-                <button onClick={()=> setPages( pages-1)}>Prev</button>
+                <button onClick={()=>{
+                    setPages(pages+1)
+                    console.log(pages)
+                }}>Next</button>
+                <br/>
+                <button onClick={()=> {
+                    setPages(pages-1)
+                    console.log(pages)
+                }}>Prev</button>
             </div>
         </>
     )

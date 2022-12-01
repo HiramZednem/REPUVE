@@ -11,8 +11,9 @@ import VehicleCard from "./VehicleCard.jsx";
 
 function ConsultaVehiculo() {
     const [niv,setNiv]= useState('');
-    const [data,setData]=useState(null);
+    const [data,setData]=useState([]);
     const handlerNivInput=(e)=>setNiv(e.target.value);
+    const [info,setInfo]=useState(false)
 
     const vehicleData = (data) => {
         if ( data.data == null ) {
@@ -25,6 +26,7 @@ function ConsultaVehiculo() {
         }else {
             setData(data.data)
             console.log(data.data)
+            setInfo(true)
         }
     }
 
@@ -59,19 +61,19 @@ const handlerSubmitForm=(e)=>{
                 <button className={"bttn-searchForm"}>Buscar</button>
             </form>
             <br/>
-            {
-                data?.map(vehicle=>
-                <VehicleCard
-                key={vehicle.id}
-                brand={vehicle.brand}
-                model={vehicle.model}
-                year={vehicle.year}
-                color={vehicle.color}
-                vehiclePicture={vehicle.vehiclePicture}
-                />
-                )
+                <div>
+                    {
+                         info&& <VehicleCard
+                        key={data.id}
+                        model={data.model}
+                        brand={data.brand}
+                        year={data.year}
+                        color={data.color}
+                        vehiclePicture={data.vehiclePicture}
 
-            }
+                            />
+                    }
+                </div>
 
             <ConsultaVehicularInform></ConsultaVehicularInform>
         </>
