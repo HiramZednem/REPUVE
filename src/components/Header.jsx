@@ -11,7 +11,7 @@ export const Header = () => {
                 <img src={gobiernoLogo} alt="Logo Gobierno de México" />
             </div>
             <div className="opciones">
-                <a href="/consultaVehicular">Consulta Vehicular</a>
+                <a href="/vehicular/consult">Consulta Vehicular</a>
                 <a href="/signIn"> <img src={userIcon} alt="User icon" /> </a>
             </div>
         </header>

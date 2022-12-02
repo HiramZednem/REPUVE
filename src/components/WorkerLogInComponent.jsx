@@ -1,19 +1,24 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import '../assets/styles/workerLogIn.css'
 import maleUser from '../assets/images/Male User.png'
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {Navigate, useNavigate} from "react-router-dom";
 import Swal from "sweetalert2";
+
+import {IsLoginContext} from "../contexts/IsLoginContext";
+import {UserContext} from '../contexts/UserContext';
+
 
 function WorkerLogInComponent() {
     const [email, setEmail]=useState('');
     const [password, setPassword]=useState('');
     const [data, setData]=useState(null);
     const navigate=useNavigate();
-    const [auth, setAuth]=useState(null);
 
     const handlerMailInput = (e) => setEmail(e.target.value);
     const handlerPasswordInput = (e) =>setPassword(e.target.value);
+    const {setIsLogued} = useContext(IsLoginContext)
+    const {user,setUser} = useContext(UserContext)
 
     const workerData = (data) => {
         if ( data.data == null ) {
@@ -25,9 +30,9 @@ function WorkerLogInComponent() {
             })
         }else {
             setData(data.data)
-            console.log(data)
-            setAuth(data.data)
-        navigate('/gob/home')
+            setUser(data.data)
+            setIsLogued(true);
+            navigate('/gob/home')
         }
     }
 

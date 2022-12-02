@@ -10,31 +10,35 @@ import WorkerRegistrer from "./pages/WorkerRegistrer.jsx";
 import WorkerVehicleView from "./pages/WorkerVehicleView.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import RegistryAgency from "./pages/RegistryAgency.jsx";
-import AuthContext from "./contexts/AuthContext.js";
 import VehicularCatalog from "./pages/VehicularCatalog.jsx";
+import WorkerConsultaVehicular from "./pages/WorkerConsultaVehicular.jsx";
+import {IsLoginContext, IsLoginDataContext} from "./contexts/IsLoginContext";
+import {UserDataContext, UserContext} from "./contexts/UserContext";
 
 function App() {
-    // const [auth, setAuth]=useState(false);
         return (
         <BrowserRouter>
-            {/*<AuthContext.Provider value={{auth, setAuth}}>*/}
-                <Routes>
+            <IsLoginDataContext>
+                <UserDataContext>
+                     <Routes>
                     <Route index element={<GeneralHome/>}/>
                     <Route path={'/home'} element={<GeneralHome/>}/>
-                    <Route path={'/consultaVehicular'} element={<ConsultaVehicular/>}/>
+                    <Route path={'/vehicular/consult'} element={<ConsultaVehicular/>}/>
                     <Route path={'vehicle/consult'} element={<GeneralVehicleView/>}/>
                     <Route path={'/signUp'} element={<WorkerRegistrer/>}/>
                     <Route path={'/signIn'} element={<WorkerLogIn/>}/>
                     {/*///*/}
-                    {/*<Route element={<PrivateRoute/>}>*/}
+                         <Route element={<PrivateRoute/>}>
                     <Route path={'/gob/home'} element={<WorkerHome/>}/>
                     <Route path={'/gob/registry/agency'} element={<RegistryAgency/>}/>
+                    <Route path={'/gob/vehicular/consult'} element={<WorkerConsultaVehicular/>}/>
                     <Route path={'/gob/vehicle/consult'} element={<WorkerVehicleView/>}/>
                     <Route path={'/gob/vehicular/catalog'} element={<VehicularCatalog/>}/>
                     <Route path={'/gob/registry/vehicle'} element={<VehicularRegistry/>}/>
-                    {/*</Route>*/}
-                </Routes>
-            {/*</AuthContext.Provider>*/}
+                          </Route>
+                    </Routes>
+                </UserDataContext>
+            </IsLoginDataContext>
         </BrowserRouter>
         );
 
