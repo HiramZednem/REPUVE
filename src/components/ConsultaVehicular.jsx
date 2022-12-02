@@ -2,10 +2,12 @@ import 'bootstrap/dist/css/bootstrap.css'
 import '../assets/styles/cosultaVehicular.css'
 import Swal from "sweetalert2";
 import ConsultaVehicularInform from "./ConsultaVehicularInform.jsx";
-import {useState} from "react";
+import {useContext, useState} from "react";
 import searchIcon from '../assets/images/searchIcon.png'
 import {useNavigate} from "react-router-dom";
 import VehicleCard from "./VehicleCard.jsx";
+
+import {VehicleIdContext} from "../contexts/VehicleIdContext.jsx";
 
 
 
@@ -14,6 +16,9 @@ function ConsultaVehiculo() {
     const [data,setData]=useState([]);
     const handlerNivInput=(e)=>setNiv(e.target.value);
     const [info,setInfo]=useState(false)
+    const {setId}=useContext(VehicleIdContext)
+
+
 
     const vehicleData = (data) => {
         if ( data.data == null ) {
@@ -27,6 +32,7 @@ function ConsultaVehiculo() {
             setData(data.data)
             console.log(data.data)
             setInfo(true)
+            setId(data.data.id)
         }
     }
 
@@ -65,13 +71,14 @@ const handlerSubmitForm=(e)=>{
                     {
                          info&& <VehicleCard
                         key={data.id}
+                        id={data.id}
                         model={data.model}
                         brand={data.brand}
                         year={data.year}
                         color={data.color}
                         vehiclePicture={data.vehiclePicture}
 
-                            />
+                        />
                     }
                 </div>
 

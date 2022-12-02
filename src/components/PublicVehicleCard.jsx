@@ -1,12 +1,8 @@
-
-import '../assets/styles/workerVehicleCard.css';
-import {VehicleIdContext} from "../contexts/VehicleIdContext.jsx";
 import {useContext, useEffect, useState} from "react";
+import {VehicleIdContext} from "../contexts/VehicleIdContext.jsx";
 
-
-
-function WorkerVehicleCard() {
-const {id} =useContext(VehicleIdContext)
+function PublicVehicleCard() {
+    const {id} =useContext(VehicleIdContext)
     const [data,setData]=useState([])
 
 
@@ -16,8 +12,6 @@ const {id} =useContext(VehicleIdContext)
             .then(data=>setData(data.data))
             .catch(err=>console.log(err))
     },[])
-
-
 
     return (
         <div className="card-car-view-container">
@@ -40,25 +34,14 @@ const {id} =useContext(VehicleIdContext)
                 <span className="subtitle">{data.plateNumber}</span>
                 <span className="info">AGENCIA DE PROCEDENCIA</span>
                 <span className="subtitle">{data.agencyName}</span>
-                <br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br /><br />
                 <span className="info">NVI</span>
                 <span className="subtitle">{data.vehicleNumberId}</span>
                 <span className="info">PRECIO</span>
                 <span className="subtitle">{data.price}</span>
-                <span className="info">ID DEL VEHICULO</span>
-                <span className="subtitle">{data.id}</span>
-                <br />
-                <span className="info-dueño">DATOS DEL DUEÑO</span>
-                <span className="datos-dueño">Nombre del Dueño</span>
-                <span className="name-owner">{data.ownerName}</span>
-                <span className="datos-dueño">Apellidos del Dueño</span>
-                <span className="name-owner">{data.ownerLastName}</span>
             </div>
-            {/*<div className="container-flecha">*/}
-            {/*    <img src={data.vehiclePicture} alt="" />*/}
-            {/*</div>*/}
         </div>
     );
 }
 
-export default WorkerVehicleCard;
+export default PublicVehicleCard;

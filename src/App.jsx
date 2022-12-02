@@ -14,12 +14,14 @@ import VehicularCatalog from "./pages/VehicularCatalog.jsx";
 import WorkerConsultaVehicular from "./pages/WorkerConsultaVehicular.jsx";
 import {IsLoginContext, IsLoginDataContext} from "./contexts/IsLoginContext";
 import {UserDataContext, UserContext} from "./contexts/UserContext";
+import {VehicleDataContext} from "./contexts/VehicleIdContext";
 
 function App() {
         return (
         <BrowserRouter>
             <IsLoginDataContext>
                 <UserDataContext>
+                    <VehicleDataContext>
                      <Routes>
                     <Route index element={<GeneralHome/>}/>
                     <Route path={'/home'} element={<GeneralHome/>}/>
@@ -37,6 +39,7 @@ function App() {
                     <Route path={'/gob/registry/vehicle'} element={<VehicularRegistry/>}/>
                           </Route>
                     </Routes>
+                    </VehicleDataContext>
                 </UserDataContext>
             </IsLoginDataContext>
         </BrowserRouter>
