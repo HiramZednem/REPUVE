@@ -1,0 +1,64 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1REM = 10px */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+/*Imagenes encajen en todos lados*/
+img {
+    max-width: 100%;
+    display: block;
+}
+
+  
+  
+/** global settings **/
+
+
+  
+/** utilidades **/
+.text-center {
+      text-align: center;
+}
+
+
+.header-principal {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    background-color: #13322B;
+    height: 6rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    padding-left: 3rem;  
+}
+
+.opciones{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.opciones a {
+    text-decoration: none;
+    color: #fff;
+    transition: color, 0.3s , ease-out;
+    font-size: 1.6rem;
+}
+
+.opciones a:hover {
+    color: #77B4A1;
+}

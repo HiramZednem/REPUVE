@@ -1,8 +1,10 @@
 import '../assets/styles/registerAgency.css'
 import Agency from '../assets/images/Agency.png'
 import { useState } from 'react';
+import Swal from "sweetalert2";
 
-function RegisterAgency() {
+
+function AgencyRegistry() {
 
     const [nameAgency, setNameAgency] =useState('');
     const [address, setAddress] =useState('');
@@ -43,13 +45,23 @@ function RegisterAgency() {
             fetch('http://54.160.253.80:8080/agency', option)
                 .then(response=>response.json())
                 //CHECAR
-                .then(data=> data.status ? alert('Registro erronio'):alert('Registro Exitoso'))
+                .then(data=> data.status ? Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'User not Found!',
+                    footer: '<b>error?</b><br/><span>Verifique que la informacion sea correcta e intente de nuevo</span>'
+                }):Swal.fire(
+                    'Successfull Register!',
+                    'You clicked the button!',
+                    'success'
+                  ))
                 .catch(err=>console.log('err'))
         }
 
 
 
-    return ( 
+    return (
+        <>
         <div className='RegisterAgency'>
             <div className='AllConten'>
                 <form className="RegisterConten" onSubmit={handleSubmit}>
@@ -76,7 +88,8 @@ function RegisterAgency() {
                 <img className='Agency' src={Agency} />
             </div>
         </div>
-     );
+     </>
+            );
 }
 
-export default RegisterAgency;
+export default AgencyRegistry;

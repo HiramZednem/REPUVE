@@ -6,6 +6,14 @@
     background-color: #13322B;
     display:flex;
 }
+.cerrarSesion{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border: #13322B;
+    border-radius: 4%;
+    font-size: 60%;
+    margin-left: 1.5%;
+}
 .GobiernoIcon{
     width: 10%;
     height: 10%;
@@ -16,6 +24,7 @@
     margin-top: 0.5%;
 }
 .navegar{
+    margin-top: 10px;
     width: 45%;
     margin-left: 35%;
 }
@@ -23,7 +32,7 @@
     display: inline;
     margin-left:  15%;
     list-style:none;
-    
+
 }
 .navegar li a{
     text-decoration: none;
@@ -89,4 +98,3 @@
     font-family: 'Montserrat';
     font-size: 17px;
 }
-

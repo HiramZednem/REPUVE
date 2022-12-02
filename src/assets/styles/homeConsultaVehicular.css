@@ -1,0 +1,33 @@
+.container-consultaVehicular{
+    display: flex;
+    width: 100%;
+
+}
+
+.container-info{
+    align-self: center;
+    justify-self: center;
+    width: 65%;
+    text-align: center;
+}
+
+.bttn-consult{
+    background-color: #650000;
+    color: white;
+    width: 30%;
+}
+.h1-content{
+    font-weight: bolder;
+    font-size: 4rem;
+}
+.h2-content{
+    font-weight: bold;
+    font-size: 2rem;
+
+}
+
+.content-image{
+    width: 100%;
+    height: auto;
+}
+
