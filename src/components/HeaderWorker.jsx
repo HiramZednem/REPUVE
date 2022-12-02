@@ -12,13 +12,13 @@ function HeaderWorker() {
                         <img src={gobiernoLogo} alt="" id="LogoMx" />
                     </div>
                     <div className="col-2 opciones">
-                        <a href="" className="link"> <p className="enlaces">Consulta Vehicular</p></a>
+                        <a href="" className="link"> <p className="enlaces">Registro Vehicular</p></a>
                     </div>
                     <div className="col-2 opciones">
                         <a href="" className="link"> <p className="enlaces">Consulta Vehicular</p></a>  
                     </div>
                     <div className="col-2 opciones">
-                        <a href="" className="link"> <p className="enlaces">Consulta Vehicular</p></a>
+                        <a href="" className="link"> <p className="enlaces">Lista Vehicular</p></a>
                     </div>
                     <div className="col-3"></div>
                     <div className="col-1 icons-div">

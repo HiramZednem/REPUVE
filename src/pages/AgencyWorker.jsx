@@ -2,19 +2,19 @@
 import HeaderWorker from "../components/HeaderWorker";
 import WorkerPerfil from "../components/WorkerPerfil";
 import OptionsWorker from "../components/OptionsWorker";
-import ConsultaVehicularWorker from "../components/ConsultaVehicularWorker";
-
+import RegisterAgency from "../components/RegisterAgency";
 import Footer from "../components/Footer";
-function ConsultaWorker() {
+
+function AgencyWorker() {
     return (  
         <>
-        <HeaderWorker />
-        <WorkerPerfil />
-        <OptionsWorker />
-        <ConsultaVehicularWorker />
-        <Footer />
+            <HeaderWorker />
+            <WorkerPerfil />
+            <OptionsWorker />
+            <RegisterAgency />
+            <Footer />
         </>
     );
 }
 
-export default ConsultaWorker;
+export default AgencyWorker;

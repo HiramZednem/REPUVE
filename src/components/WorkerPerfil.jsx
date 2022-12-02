@@ -8,7 +8,7 @@ function HeaderWorker() {
     return ( 
         <section>
             <div className="container">
-                <div className="row">
+                <div className="row header-perfil">
                     <div className="col-1"></div>
                     <div className="col-4">
                         <h2 className="title-welcome">¡Hola de Nuevo!</h2>
@@ -16,7 +16,12 @@ function HeaderWorker() {
                     </div>
                     <div className="col-4"></div>
                     <div className="col-2">
-                        <div className="perfil-circle"></div>
+                        <div className="perfil-circle">
+                            <input type="file" id="subirFoto"/>
+                            <label htmlFor="subirFoto" className="subirfoto-label">
+                                Subir Foto
+                            </label>
+                        </div>
                     </div>
                     <div className="col-1"></div>
                 </div>
@@ -29,7 +34,7 @@ function HeaderWorker() {
                 </div>
             </div>
         </section>
-     );
+    );
 }
 
 export default HeaderWorker;

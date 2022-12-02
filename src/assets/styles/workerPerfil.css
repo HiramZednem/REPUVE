@@ -1,8 +1,37 @@
 
 
 /*rediseño de CSS*/
+.header-perfil{
+    margin-top: 5%;
+}
+#subirFoto{
+    display: none;
+}
+.subirfoto-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17rem;
+    height: 17rem;
+    border-radius: 50%;
+    background-image: url(../images/user.svg);
+    background-size: contain;
+    background-position: center;
+    border: .5rem solid aqua;
+    color:transparent;
+    transition: .3s all;
+    /*Texto*/
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 250;
+    font-size: 1.54275rem;
+    line-height: 1.9rem;
+}
+.subirfoto-label:hover{
+    background: transparent;
+    color: black;
+}
 .title-welcome{
-    margin-top: 25%;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -43,6 +72,10 @@
         font-size: 2rem;
         line-height: 2.9rem;
     }
+    .subirfoto-label{
+        width: 12rem;
+        height: 12rem;
+    }
 }
 /*Movil*/
 @media only screen and (max-width: 600px) {
@@ -57,6 +90,10 @@
     .wyd{
         font-size: 1.5rem;
         line-height: 2.9rem;
+    }
+    .subirfoto-label{
+        width: 7rem;
+        height: 7rem;
     }
 }
 
