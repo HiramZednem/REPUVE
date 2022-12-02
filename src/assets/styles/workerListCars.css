@@ -29,3 +29,31 @@
 .adelanteList:hover{
     background-color: black;
 }
+
+@media only screen and (max-width:768px){
+    .atrasList{
+        height: 50%;
+        width: 100%;
+    }
+    .adelanteList{
+        height: 50%;
+        width: 100%;
+    }
+    .flechas{
+        height: 100%;
+    }
+}
+/*Movil*/
+@media only screen and (max-width: 600px) {
+    .atrasList{
+        height: 50%;
+        width: 100%;
+    }
+    .adelanteList{
+        height: 50%;
+        width: 100%;
+    }
+    .flechas{
+        height: 100%;
+    }
+}

@@ -1,13 +1,13 @@
 .car{
     width: 30rem;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 1rem 1rem 0rem 0rem;
 }
 
 .link-from-car{
     background: rgba(255, 255, 255, 0.79);
     backdrop-filter: blur(7.5px);
     /* Note: backdrop-filter has minimal browser support */
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 1rem 1rem 0rem 0rem;
     display: flex;
     align-items: center;
     justify-content: right;
@@ -20,4 +20,18 @@
 }
 #button-listCar:hover{
     background: black;
+}
+
+/*Tablet*/
+@media only screen and (max-width:768px){
+    .car{
+        width: 25%;
+    }
+
+}
+/*Movil*/
+@media only screen and (max-width: 600px) {
+    .car{
+        width: 25%;
+    }
 }

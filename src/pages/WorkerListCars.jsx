@@ -25,8 +25,8 @@ function WorkerListCars() {
             <div className="row">
                 <div className="col-5"></div>
                 <div className="col-2 buttons">
-                    <button className="atrasList"> <img src={Left} alt="" /></button>
-                    <button className="adelanteList"><img src={Right} alt="" /></button>
+                    <button className="atrasList"> <img src={Left} alt=""  className="flechas"/></button>
+                    <button className="adelanteList"><img src={Right} alt="" className="flechas"/></button>
                 </div>
                 <div className="col-5"></div>
             </div>
