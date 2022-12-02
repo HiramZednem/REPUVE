@@ -1,0 +1,23 @@
+.car{
+    width: 30rem;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.link-from-car{
+    background: rgba(255, 255, 255, 0.79);
+    backdrop-filter: blur(7.5px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+#button-listCar{
+    border-radius: 10%;
+    background: #650000;
+    border-color: transparent;
+    transition: .5s;
+}
+#button-listCar:hover{
+    background: black;
+}
