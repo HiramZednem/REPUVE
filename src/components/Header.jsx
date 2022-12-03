@@ -5,6 +5,7 @@ import "../assets/styles/normalize.css" //Quita estilos por defecto del navegado
 import "../assets/styles/Header.css"
 
 export const Header = () => {
+
     return (
         <header className="header-principal">
             <div className="logo">

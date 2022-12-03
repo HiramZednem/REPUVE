@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect, useRef} from "react";
 import axios from "axios";
 
 import registroPhoto from "../assets/images/registro-carro.png";
@@ -7,7 +7,6 @@ import "../assets/styles/normalize.css"; //Quita estilos por defecto del navegad
 import "../assets/styles/RegistroCarro.css";
 
 export const RegistroCarro = () => {
-  const api = "18.215.246.106:8080";
 
   //Variables para registro;
   const [model, setModel] = useState("");
@@ -18,20 +17,22 @@ export const RegistroCarro = () => {
   const [fuelType, setFuelType] = useState("");
   const [serialNumber, setSerialNumber] = useState("");
   const [plate, setPlate] = useState("");
-  const [nvi, setNvi] = useState("");
+  const [niv, setNiv] = useState("");
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
   const [agencyName, setAgencyName] = useState("");
   const [price, setPrice] = useState("");
-  var id;
+  const [data,setData]=useState([]);
 
   //Consulta de las agencias
   const [agencys, setAgencys] = useState([]);
+//set id para la imagen
+  const [registro,setRegistro]=useState(false)
 
   /* `${api}/agency` */
   const getProducts = async () => {
     await axios 
-      .get(`http://54.160.253.80:8080/agency`)
+      .get(`http://18.215.246.106:8080/agency`)
       .then(({ data }) => setAgencys(data.data));
   };
 
@@ -50,7 +51,6 @@ export const RegistroCarro = () => {
         Connection: "keep-alive",
       },
       body: JSON.stringify({
-        id,
         brand: brand,
         model: model,
         year: year,
@@ -58,7 +58,7 @@ export const RegistroCarro = () => {
         engineType: engineType,
         fuelType: fuelType,
         plateNumber: plate,
-        vehicleNumberId: nvi,
+        vehicleNumberId: niv,
         ownerName: name,
         ownerLastName: lastname,
         price: price,
@@ -66,10 +66,13 @@ export const RegistroCarro = () => {
       }),
     };
 
-    fetch(`${api}/vehicle`, option)
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log("err"));
+    fetch(`http://18.215.246.106:8080/vehicle`, option)
+      .then(response => response.json())
+      .then((data) => {
+        setRegistro(true)
+        setData(data.data)
+      })
+      .catch((err) => console.log(err));
   };
 
   // Handlers onChange
@@ -81,11 +84,38 @@ export const RegistroCarro = () => {
   const hFuelType = (e) => setFuelType(e.target.value);
   const hSerialNumber = (e) => setSerialNumber(e.target.value);
   const hPlate = (e) => setPlate(e.target.value);
-  const hNvi = (e) => setNvi(e.target.value);
+  const hNvi = (e) => setNiv(e.target.value);
   const hName = (e) => setName(e.target.value);
   const hLastname = (e) => setLastname(e.target.value);
   const hAgencyName = (e) => setAgencyName(e.target.value);
   const hPrice = (e) => setPrice(e.target.value);
+
+
+
+  const hUploadFile = (e) => {
+    let file =e.target.files[0]
+
+    let formData =new FormData();
+      formData.append('image', file)
+    formData.append('idVehicle', data.id)
+
+    axios({
+      url:`http://18.215.246.106:8080/file/vehicle`,
+      method:"POST",
+      headers:{
+        "Content-Type": "multipart/form-data",
+        "Accept": "application/json",
+        "type": "formData"      },
+      data:formData
+    }).then((resp)=>{
+
+    })
+
+  }
+
+
+
+
 
   return (
     <div className="contenido">
@@ -192,6 +222,15 @@ export const RegistroCarro = () => {
       <div className="imagen">
         <img src={registroPhoto} alt="Registro Banner" />
       </div>
+      {
+        registro&&<form>
+        <label htmlFor={"imageUpload"}> foto del vehiculo</label>
+          <input id={"imageUpload"} type={"file"} onChange={(e)=>hUploadFile(e)}/>
+            <button type={"button"}> Subir</button>
+          </form>
+
+
+      }
     </div>
   );
 };
