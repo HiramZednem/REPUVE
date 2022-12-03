@@ -5,6 +5,8 @@ import registroPhoto from "../assets/images/registro-carro.png";
 
 import "../assets/styles/normalize.css"; //Quita estilos por defecto del navegador.
 import "../assets/styles/RegistroCarro.css";
+import Swal from "sweetalert2";
+import {useNavigate} from "react-router-dom";
 
 export const RegistroCarro = () => {
 
@@ -28,7 +30,7 @@ export const RegistroCarro = () => {
   const [agencys, setAgencys] = useState([]);
 //set id para la imagen
   const [registro,setRegistro]=useState(false)
-
+  const navigate=useNavigate();
   /* `${api}/agency` */
   const getProducts = async () => {
     await axios 
@@ -108,8 +110,17 @@ export const RegistroCarro = () => {
         "type": "formData"      },
       data:formData
     }).then((resp)=>{
-
-    })
+    }).then(data=> {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Vehiculo Registrado',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          navigate('/gob/vehicular/catalog')
+    }
+    )
 
   }
 
@@ -223,7 +234,7 @@ export const RegistroCarro = () => {
         <img src={registroPhoto} alt="Registro Banner" />
       </div>
       {
-        registro&&<form>
+        registro&& <form>
         <label htmlFor={"imageUpload"}> foto del vehiculo</label>
           <input id={"imageUpload"} type={"file"} onChange={(e)=>hUploadFile(e)}/>
             <button type={"button"}> Subir</button>
