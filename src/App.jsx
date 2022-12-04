@@ -21,15 +21,8 @@ import WorkerListCars from "./pages/WorkerListCars";
 
 
 function App() {
-  // const [isLogued, setIsLogued] = useState(false)
-
   return (  
-        // <HeaderWorker/>
-      <WorkerListCars/>
-
-  //   <UserContext.Provider value={{ isLogued, setIsLogued }}>
-  //   </UserContext.Provider>
-
+    <GeneralHome/>
   );
 }
 
