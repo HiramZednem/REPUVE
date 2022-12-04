@@ -49,11 +49,10 @@ function HeaderWorker() {
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Foto Actualizada',
+                            title: 'Foto Actualizada, el cambio puede tardar en reflejarce',
                             showConfirmButton: false,
                             timer: 1500
                         })
-
 
                 }
                 ))

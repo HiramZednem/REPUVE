@@ -40,7 +40,7 @@ function AgencyRegistry() {
                 })
             }
           
-            fetch('http://54.160.253.80:8080/agency', option)
+            fetch('http://18.215.246.106:8080/agency', option)
                 .then(response=>response.json())
                 //CHECAR
                 .then(data=> data.status ? alert('Registro erronio'):alert('Registro Exitoso'))
