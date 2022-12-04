@@ -8,6 +8,8 @@ import Home from '../assets/images/Home.png'
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext.jsx'
 import { IsLoginContext } from "../contexts/IsLoginContext";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 
 function HeaderWorker() {
@@ -18,6 +20,49 @@ function HeaderWorker() {
         setUser([])
         setIsLogued(false)
     }
+
+
+    const handlePic=()=>{
+        Swal.fire({
+            title: 'Suba su foto de perfil',
+            input: 'file',
+            showCancelButton: true,
+            confirmButtonText: 'Subir',
+            showLoaderOnConfirm: true,
+            preConfirm: (e) => {
+                let file =e
+
+                let formData =new FormData();
+                formData.append('image', file)
+                formData.append('idWorker', user.id )
+                return(
+                axios({
+                    url:`http://18.215.246.106:8080/file/worker`,
+                    method:"POST",
+                    headers:{
+                        "Content-Type": "multipart/form-data",
+                        "Accept": "application/json",
+                        "type": "formData"      },
+                    data:formData
+                }).then((resp)=>{
+                }).then(data=> {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Foto Actualizada',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+
+
+                }
+                ))
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        })
+    }
+
+
 
     return ( 
         <div className='HeaderWorker'>
@@ -35,11 +80,12 @@ function HeaderWorker() {
                 <div className='userconter'>
                     <div className='hola'>
                         <p className='saludo'>Hola de Nuevo!</p>
-                        <p className='nombre'>nombre del usuario</p>
+                        <p className='nombre'>{user.name}</p>
                     </div>
-                    <img className='Perfil' src={Perfil}/>
+                    <img className='Perfil' onClick={(handlePic)}  src={user.profilePicture}/>
                 </div>
-                <p className='Pregunta'>Que deseas realizar hoy...</p>
+
+               <span>que quieres hacer hoy...</span>
                 <div className='Opciones'>
                     <img className='Home' src={Home} />
                     <ul className='Acciones'>

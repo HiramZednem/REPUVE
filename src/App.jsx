@@ -15,6 +15,7 @@ import WorkerConsultaVehicular from "./pages/WorkerConsultaVehicular.jsx";
 import {IsLoginContext, IsLoginDataContext} from "./contexts/IsLoginContext";
 import {UserDataContext, UserContext} from "./contexts/UserContext";
 import {VehicleDataContext} from "./contexts/VehicleIdContext";
+import VehicleDataEdit from "./pages/VehicleDataEdit";
 
 function App() {
         return (
@@ -37,6 +38,7 @@ function App() {
                     <Route path={'/gob/vehicle/consult'} element={<WorkerVehicleView/>}/>
                     <Route path={'/gob/vehicular/catalog'} element={<VehicularCatalog/>}/>
                     <Route path={'/gob/registry/vehicle'} element={<VehicularRegistry/>}/>
+                    <Route path={'/gob/vehicle/edit'} element={<VehicleDataEdit/>}   />
                           </Route>
                     </Routes>
                     </VehicleDataContext>

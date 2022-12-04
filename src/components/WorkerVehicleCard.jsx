@@ -2,11 +2,13 @@
 import '../assets/styles/workerVehicleCard.css';
 import {VehicleIdContext} from "../contexts/VehicleIdContext.jsx";
 import {useContext, useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 
 
 function WorkerVehicleCard() {
-const {id} =useContext(VehicleIdContext)
+    const navigate=useNavigate();
+const {id,setId} =useContext(VehicleIdContext)
     const [data,setData]=useState([])
 
 
@@ -17,6 +19,10 @@ const {id} =useContext(VehicleIdContext)
             .catch(err=>console.log(err))
     },[])
 
+    const handleEdit=()=>{
+     navigate('/gob/vehicle/edit')
+
+    }
 
 
     return (
@@ -57,6 +63,9 @@ const {id} =useContext(VehicleIdContext)
             {/*<div className="container-flecha">*/}
             {/*    <img src={data.vehiclePicture} alt="" />*/}
             {/*</div>*/}
+            <div>
+                <button onClick={handleEdit}> EDITAR</button>
+            </div>
         </div>
     );
 }
