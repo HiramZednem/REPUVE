@@ -10,8 +10,10 @@ import Footer from "../components/Footer.jsx";
 import logo from "../assets/images/logoMX.svg";
 import etiqueta1 from "../assets/images/etiqueta1.svg";
 import fotoAviso from "../assets/images/aviso-importante2.svg";
+import queEsRepuve from "../assets/images/queesRepuve.svg";
 //CSS
 import "../assets/styles/generalHome.css";
+
 function GeneralHome() {
     return(
         <>
@@ -52,3 +54,18 @@ function GeneralHome() {
     );
 }
 export default GeneralHome;
+
+        //import {Header} from "../components/Header";
+       // import Footer from "../components/Footer.jsx";
+        //import WorkerHomeAviso from "../components/WorkerHomeAviso.jsx";
+
+        //function GeneralHome() {
+           // return(
+               // <>
+                //<Header></Header>
+              //  <WorkerHomeAviso></WorkerHomeAviso>
+              //  <HomeWhatsRepuve></HomeWhatsRepuve>
+              //  <HomeConsultaVehicular></HomeConsultaVehicular>
+               // <HomeAviso></HomeAviso><br/>
+               // <HomeMap></HomeMap>
+                //<Footer></Footer>

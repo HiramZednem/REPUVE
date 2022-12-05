@@ -1,5 +1,8 @@
 .car{
     width: 30rem;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
     border-radius: 1rem 1rem 0rem 0rem;
 }
 
@@ -20,6 +23,10 @@
 }
 #button-listCar:hover{
     background: black;
+}
+#fotoCarroList{
+    width: 100%;
+    height: 100%;
 }
 
 /*Tablet*/

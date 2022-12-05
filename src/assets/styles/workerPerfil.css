@@ -1,5 +1,3 @@
-
-
 /*rediseño de CSS*/
 .header-perfil{
     margin-top: 5%;
@@ -7,6 +5,8 @@
 #subirFoto{
     display: none;
 }
+
+
 .subirfoto-label{
     display: flex;
     justify-content: center;

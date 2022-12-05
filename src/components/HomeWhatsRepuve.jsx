@@ -1,6 +1,5 @@
 import '../assets/styles/homeWhatsRepuve.css'
-import react from '../assets/react.svg'
-
+import queEsRepuve from "../assets/images/queesRepuve.svg";
 function HomeWhatsRepuve() {
 return(
     <>
@@ -8,7 +7,7 @@ return(
         <div className="container general">
             <div className="row">
                 <div className="col-5">
-                    Imagen-5 columnas
+                    <img src={queEsRepuve} alt="" id="QUEESREPUVE"/>
                 </div>
                 <div className="col-7">
                     <h1 className="title-QueEs">¿Qué es REPUVE?</h1>

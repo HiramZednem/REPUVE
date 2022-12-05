@@ -1,6 +1,7 @@
 import "../assets/styles/registerAgency.css";
 import Agency from '../assets/images/Agency.svg'
 import { useState } from 'react';
+import Swal from "sweetalert2";
 
 function RegisterAgency() {
 
@@ -39,15 +40,25 @@ function RegisterAgency() {
                     phoneNumber:phoneNumber
                 })
             }
-          
-            fetch('http://54.160.253.80:8080/agency', option)
+            fetch('http://18.215.246.106:8080/agency', option)
                 .then(response=>response.json())
                 //CHECAR
-                .then(data=> data.status ? alert('Registro erronio'):alert('Registro Exitoso'))
-                .catch(err=>console.log('err'))
+                .then(data=> data.status ? alert("fail"):Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Agencia registrada correctamente',
+                    showConfirmButton: false,
+                    timer: 1500
+                  }))
+                .catch(err=>{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+                        footer: '<a href="">Why do I have this issue?</a>'
+                      })
+                })
         }
-
-
 
     return ( 
         <section>
@@ -78,7 +89,10 @@ function RegisterAgency() {
                 <div className="row divbutton">
                     <div className="col-2"></div>
                     <div className="col-3">
-                        <button className="button-registrar">Registrar</button>
+                        <form onSubmit={handleSubmit}>
+                            <button className="button-registrar">Registrar</button>
+                        </form>
+                        
                     </div>
                     <div className="col-7"></div>
                 </div>

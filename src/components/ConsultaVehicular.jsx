@@ -1,17 +1,23 @@
-import '../assets/styles/cosultaVehicular.css'
-import ConsultaVehicularInform from "./ConsultaVehicularInform.jsx";
-import {useState} from "react";
+//Hooks
+import {useContext, useState} from "react";
+import {useNavigate} from "react-router-dom";
+//Componentes Importados
+import VehicleCard from "../components/VehicleCard";
+import { VehicleIdContext } from "../contexts/VehicleIdContext";
+import ConsultaVehicularInform from "./ConsultaVehicularInform";
 //Imagenes Importadas
 import lupa from "../assets/images/lupa.svg";
-import searchIcon from '../assets/images/searchIcon.png'
 import fotoBusqueda from "../assets/images/image-consulta-vehicular1.svg";
-
-
+import searchIcon from '../assets/images/searchIcon.png'
+//CSS
+import '../assets/styles/cosultaVehicular.css'
 
 function ConsultaVehiculo() {
     const [niv,setNiv]= useState('');
-    const [data,setData]=useState(null);
+    const [data,setData]=useState([]);
     const handlerNivInput=(e)=>setNiv(e.target.value);
+    const [info,setInfo]=useState(false)
+    const {setId}=useContext(VehicleIdContext)
 
     const vehicleData = (data) => {
         if ( data.data == null ) {
@@ -23,18 +29,19 @@ function ConsultaVehiculo() {
             })
         }else {
             setData(data.data)
-            console.log(data)
+            console.log(data.data)
+            setInfo(true)
+            setId(data.data.id)
         }
     }
 
 const handlerSubmitForm=(e)=>{
         e.preventDefault();
 
-         fetch(`http://54.160.253.80:8080/vehicle/${niv}`)
+        fetch(`http://18.215.246.106:8080/vehicle/${niv}`)
         .then(response => response.json())
         .then (data => vehicleData(data))
         .catch(err=>console.log("Unexpected error, try again later"));
-
     }
 
     return(
@@ -79,21 +86,43 @@ const handlerSubmitForm=(e)=>{
                     </div>
                     <div className="col-1"></div>
                 </div>
+                <div className="row">
+                    <div className="col-2"></div>
+                    <div className="col-5">
+                        <div className="CardMuestra">
+                            {
+                                info&& <VehicleCard
+                                key={data.id}
+                                id={data.id}
+                                vehiclePicture={data.vehiclePicture}
+                                model={data.model}
+                                />
+                            }
+                        </div>
+                    </div>
+                    <div className="col-5"></div>
+                </div>
             </div>
-
-              {/*{*/}
-              {/*data && data?.map(vehicle=>*/}
-              {/*      <VehicleCard*/}
-              {/*          key={vehicle.id}*/}
-              {/*          brand={vehicle.brand}*/}
-              {/*vehiclePic={vehicle.vehiclePicture}*/}
-              {/*          model={vehicle.model}*/}
-              {/*          year={vehicle.year}*/}
-              {/*          color={vehicle.color}*/}
-              {/*      />*/}
-              {/*  )}*/}
         </>
     );
 
 }
 export default ConsultaVehiculo;
+
+                //<button className={"bttn-searchForm"}>Buscar</button>
+                //</form>
+                //<br/>
+                    //<div>
+                        //{
+                        //    info&& <VehicleCard
+                         //   key={data.id}
+                         //   id={data.id}
+                          //  model={data.model}
+                          //  brand={data.brand}
+                          //  year={data.year}
+                           // color={data.color}
+                           // vehiclePicture={data.vehiclePicture}
+                          //  />
+                        //}//
+                  //  </div>
+              //  <ConsultaVehicularInform></ConsultaVehicularInform>

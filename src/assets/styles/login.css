@@ -1,7 +1,16 @@
+.regreso{
+    background-color: #650000;
+    border-radius: 50%;
+    transition: .5s;
+}
+.regreso:hover{
+    background-color: #000000;
+}
 .div-bottonregreso{
     margin-top: 5%;
 }
 .div-title{
+    margin-top: 15%;
     display: flex;
     justify-content: center;
 }

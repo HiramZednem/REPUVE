@@ -13,16 +13,13 @@ body {
 
 /*Imagenes encajen en todos lados*/
 
-
-  
-  
 /** global settings **/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
-  
+
 /** utilidades **/
 .text-center {
-      text-align: center;
+    text-align: center;
 }
 
 
@@ -122,6 +119,9 @@ body {
 #foto-register{
     height: 100%;
     width: 100%;
+}
+#botton-registrarCarro{
+    margin-top: 5%;
 }
 
 /*Tablet*/

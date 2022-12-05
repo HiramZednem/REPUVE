@@ -9,12 +9,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.0",
     "axios": "^1.2.0",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.2",
+    "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sweetalert2": "^11.6.13"
+    "react-redux": "^8.0.5",
+    "react-router": "^6.4.3",
+    "react-router-dom": "^6.4.4",
+    "redex": "^0.0.1",
+    "redux": "^4.2.0",
+    "sweetalert2": "^11.6.15"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",

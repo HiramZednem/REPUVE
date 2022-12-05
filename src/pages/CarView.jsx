@@ -1,3 +1,5 @@
+//HOOKS
+import {useNavigate} from "react-router-dom";
 //Componentes Importadas
 import Header from "../components/Header";
 import CardCarViewPublic from "../components/CardCarViewPublic";
@@ -23,9 +25,11 @@ function CarView() {
                 </div>
                 <div className="row">
                     <div className="col-1">
+                        <a href="/vehicular/consult">                        
                         <button className="regreso">
-                            <img src={regreso} alt="" />
-                        </button>
+                            <img src={regreso} alt=""/>
+                        </button></a>
+
                     </div>
                 </div>
             </div>

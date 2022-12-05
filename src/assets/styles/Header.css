@@ -1,7 +1,10 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%; /* 1REM = 10px */
+    font-size: 1.6rem;
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
 
 *, *:before, *:after {
     box-sizing: inherit;
@@ -11,51 +14,7 @@ body {
     font-size: 1.6rem;
 }
 
-/*Imagenes encajen en todos lados*/
-/*img {
-    max-width: 100%;
-    display: block;
-}*/
 
-/** global settings **/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
-
-
-/** utilidades **/
-.text-center {
-    text-align: center;
-}
-
-
-.header-principal {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 100;
-    background-color: #13322B;
-    height: 6rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.opciones{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.opciones a {
-    text-decoration: none;
-    color: #fff;
-    transition: color, 0.3s , ease-out;
-    font-size: 1.6rem;
-}
-
-.opciones a:hover {
-    color: #77B4A1;
-}
 /*Rediseño de CSS*/
 .header{
     width: 100%;
@@ -75,7 +34,13 @@ body {
 .opciones{
     display: flex;
     align-items: center;
-    height: 6rem; 
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 0rem;
+    color: #FFFFFF;
+    height: 6rem;
 }
 .icons-div{
     display: flex;
@@ -87,6 +52,12 @@ body {
     max-width: 3.5rem;
     max-height: 3.5rem;
 }
+.cerrarSesion{
+    color: #FFFFFF;
+    background-color: #13322B;
+    border-color: transparent;
+}
+
 
 @media only screen and (max-width:768px){
     #LogoMx{
@@ -98,10 +69,18 @@ body {
     .enlaces{
         font-size: 1.2rem;
     }
+    .cerrarSesion{
+        height: 100%;
+        width: 100%;
+    }
 }
 /*Movil*/
 @media only screen and (max-width: 600px) {
     .link{
         display: none;
+    }
+    .cerrarSesion{
+        height: 100%;
+        width: 100%;
     }
 }

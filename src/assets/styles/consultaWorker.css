@@ -51,6 +51,12 @@
     background-color: #FFFFFF;
     color: #650000;
 }
+.buscarVehiculoForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
 
 /*Tablet*/
 @media only screen and (max-width:768px){

@@ -13,7 +13,8 @@
 }
 /*CONFIGURACION PARA LAS DOS CARDS*/
 #image-car{
-    height: 38.2rem;
+    margin-top: 1%;
+    height: 37.7rem;
     width: 45.3rem;
 }
 .model-car{

@@ -1,6 +1,4 @@
-
-
-import "../assets/styles/normalize.css" //Quita estilos por defecto del navegador.
+//CSS
 import "../assets/styles/header.css"
 //Imagenes Importadas
 import gobiernoLogo from "../assets/images/GobiernoMexico.svg";
@@ -12,14 +10,16 @@ function Header() {
             <div className="container">
                 <div className="row">
                     <div className="col-2 logo">
+                        <a href="/home">
                         <img src={gobiernoLogo} alt="" id="LogoMx" />
+                        </a>
                     </div>
                     <div className="col-2 opciones">
-                        <a href="" className="link"> <p className="enlaces">Consulta Vehicular</p></a>
+                        <a href="/vehicular/consult" className="link">Consulta Vehicular</a>
                     </div>
                     <div className="col-7"></div>
                     <div className="col-1 icons-div">
-                        <img src={userIcon} alt="" id="icon-perfil"/>
+                        <a href="/signIn"><img src={userIcon} alt="" id="icon-perfil"/></a>
                     </div>
                 </div>
             </div>
@@ -27,3 +27,17 @@ function Header() {
     );
 }
 export default Header;
+
+
+
+
+
+
+
+            //<div className="opciones">
+                //<a href="/vehicular/consult">Consulta Vehicular</a>
+                //<a href="/signIn"> <img src={userIcon} alt="User icon" /> </a>
+           // </div>
+        //</header>
+    //)
+//}
