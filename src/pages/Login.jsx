@@ -44,7 +44,7 @@ function Login() {
                         <div className="row">
                             <div className="col-2"></div>
                                 <div className="col-8 div-links">
-                                    <a href="#" className="link-regreso">
+                                    <a href="/signUp" className="link-regreso">
                                         <h2 className="regresar"><b>Registraterte aqui</b> para poder acceder</h2>
                                     </a>
                                 </div>
@@ -53,7 +53,7 @@ function Login() {
                         <div className="row">
                             <div className="col-2"></div>
                                 <div className="col-8 div-crearCuenta">
-                                    <a href="#" className="link-regreso">
+                                    <a href="/home" className="link-regreso">
                                         <h2 className="regresar"> Si deseas regresar al inicio <b>haz click aqui</b></h2>
                                     </a>
                                 </div>
