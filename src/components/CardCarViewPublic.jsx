@@ -1,40 +1,80 @@
 /*Hooks*/
+import {useContext, useEffect, useState} from "react";
+import {VehicleIdContext} from "../contexts/VehicleIdContext.jsx";
 /*Paginas Exportadas*/
 /*Imagenes Exportadas*/
-import carGrey from '../assets/images/car-metalic.svg';
+
 /*CSS*/
 import '../assets/styles/cardCarViewPublic.css';
 
-function CardCarViewPublic(props) {
+function CardCarViewPublic() {
+    const {id} =useContext(VehicleIdContext)
+    const [data,setData]=useState([])
+
+    useEffect(()=>{
+        fetch(`http://18.215.246.106:8080/vehicle/id/${id}`)
+            .then(response=>response.json())
+            .then(data=>setData(data.data))
+            .catch(err=>console.log(err))
+    },[])
 
     return (  
-        <div className="card-car-view-container">
-            <div className="image-card">
-                <img src={carGrey} alt="Foto" id="img-car"/>
+        <>
+        <section>
+            <div className="container">
+                <div className="row">
+                    <div className="col-1"></div>
+                    <div className="col-10 card-car">
+                        <div className="container ">
+                            <div className="row inform-card">
+                                <div className="col-6 image-cars">
+                                    <img src={data.vehiclePicture} alt="Foto" id="image-car"/>
+                                </div>
+                                <div className="col-6 ">
+                                    <div className="container">
+                                        <div className="row">
+                                            <div className="col-6">
+                                                <span className="model-car">MODELO</span><br />
+                                                <span className="name-model">{data.model}</span>
+                                            </div>
+                                        </div>
+                                        <div className="row datos-car">
+                                            <div className="col-6">
+                                                <h3 className="info-car">MARCA</h3>
+                                                <span className="inf">{data.brand}</span>
+                                                <h3 className="info-car">AÑO</h3>
+                                                <span className="inf">{data.year}</span>
+                                                <h3 className="info-car">COLOR</h3>
+                                                <span className="inf">{data.color}</span>
+                                                <h3 className="info-car">TIPO DE MOTOR</h3>
+                                                <span className="inf">{data.engineType}</span>
+                                                <h3 className="info-car">TIPO DE COMBUSTIBLE</h3>
+                                                <span className="inf">{data.fuelType}</span>
+                                                <h3 className="info-car">NUMERO DE SERIE</h3>
+                                                <span className="inf">{data.vehicleNumberId}</span>
+                                            </div>
+                                            <div className="col-6">
+                                                <h3 className="info-car">NUMERO DE PLACAS</h3>
+                                                <span className="inf">{data.plateNumber}</span>
+                                                <h3 className="info-car">NVI</h3>
+                                                <span className="inf">{data.vehicleNumberId}</span>
+                                                <h3 className="info-car">AGENCIA PROCEDENCIA</h3>
+                                                <span className="inf">{data.agencyName}</span>
+                                                <h3 className="info-car">PRECIO</h3>
+                                                <span className="inf">{data.price}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-1"></div>
+                </div>
             </div>
-            <div className="info-card">
-                <span className="model-car">MODELO</span>
-                <span className="name-model">{props.character.model}</span>
-                <br />
-                <span className="info">AÑO</span>
-                <span className="subtitle">{props.character.year}</span>
-                <span className="info">COLOR</span>
-                <span className="subtitle">{props.character.color}</span>
-                <span className="info">TIPO DE MOTOR</span>  
-                <span className="subtitle">{props.character.engineType}</span>       
-                <span className="info">TIPO DE COMBUSTIBLE</span> 
-                <span className="subtitle">{props.character.fuelType}</span>             
-                <span className="info">NUMERO DE PLACA</span>  
-                <span className="subtitle">{props.character.plateNumber}</span>
-                <span className="info">AGENCIA DE PROCEDENCIA</span>
-                <span className="subtitle">{props.character.agencyName}</span>       
-                <br /><br /><br /><br /><br /><br /><br /><br />
-                <span className="info">NVI</span> 
-                <span className="subtitle">{props.character.vehicleNumberId}</span>        
-                <span className="info">PRECIO</span>   
-                <span className="subtitle">{props.character.price}</span>     
-            </div>
-        </div>
+        </section>
+        </>
+
     );
 }
 
