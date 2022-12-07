@@ -79,7 +79,18 @@ function RegistroCarro() {
             setInfo(true)
             console.log(data.data)
           })
-          .catch((err) => console.log(err));
+            .catch(err=>{console.log("Unexpected error, try again later")
+                if (navigator.onLine)
+                {console.log('online');
+                } else
+                {Swal.fire({
+                    icon: 'error',
+                    title: 'Error de Conexion',
+                    text: 'Problemas con la conexion a internet',
+                    footer: '<b>error?</b><br/><span>Verifique que este conectado a una red estable</span>'
+                })
+                    console.log('offline');}
+            });
       };
 
       // Handlers onChange

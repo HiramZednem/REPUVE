@@ -11,6 +11,7 @@ import fotoBusqueda from "../assets/images/image-consulta-vehicular1.svg";
 import searchIcon from '../assets/images/searchIcon.png'
 //CSS
 import '../assets/styles/cosultaVehicular.css'
+import Swal from "sweetalert2";
 
 function ConsultaVehiculo() {
     const [niv,setNiv]= useState('');
@@ -24,7 +25,7 @@ function ConsultaVehiculo() {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Vehicle not Found!',
+                text: 'No se encotro el vehiculo!',
                 footer: '<b>error?</b><br/><span>Verifique que la informacion sea correcta e intente de nuevo</span>'
             })
         }else {
@@ -41,7 +42,18 @@ const handlerSubmitForm=(e)=>{
         fetch(`http://18.215.246.106:8080/vehicle/${niv}`)
         .then(response => response.json())
         .then (data => vehicleData(data))
-        .catch(err=>console.log("Unexpected error, try again later"));
+        .catch(err=>{console.log("Unexpected error, try again later")
+        if (navigator.onLine)
+        {console.log('online');
+        } else
+        {Swal.fire({
+            icon: 'error',
+            title: 'Error de Conexion',
+            text: 'Problemas con la conexion a internet',
+            footer: '<b>error?</b><br/><span>Verifique que este conectado a una red estable</span>'
+        })
+            console.log('offline');}
+    });
     }
 
     return(

@@ -42,10 +42,11 @@ function App() {
                         <Route path={'/home'} element={<GeneralHome/>}/>
                         <Route path={'/vehicular/consult'} element={<ConsultaVehicular/>}/>
                         <Route path={'/vehicle/consult'} element={<CarView/>}/>
-                        <Route path={'/signUp'} element={<SingIn/>}/>
+
                         <Route path={'/signIn'} element={<Login/>}/>
                         {/*/*/}
                         <Route element={<PrivateRoute/>}>
+                            <Route path={'/signUp'} element={<SingIn/>}/>
                             <Route path={'/gob/home'} element={<HomeWorker/>}/>
                             <Route path={'/gob/registry/agency'} element={<AgencyWorker/>}/>
                             <Route path={'/gob/vehicular/consult'} element={<ConsultaWorker/>}/>
