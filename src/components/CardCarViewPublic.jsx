@@ -74,6 +74,7 @@ function CardCarViewPublic() {
             </div>
         </section>
         </>
+
     );
 }
 
