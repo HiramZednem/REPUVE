@@ -1,5 +1,5 @@
 import "../assets/styles/registerAgency.css";
-import Agency from '../assets/images/Agency.svg'
+import Agency from '../assets/images/agency.svg'
 import { useState } from 'react';
 import Swal from "sweetalert2";
 

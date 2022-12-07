@@ -3,7 +3,7 @@ import GobiernoMexico from "../assets/images/GobiernoMexico.svg";
 import Facebook from '../assets/images/Facebook.svg'
 import Twitter from '../assets/images/Twitter.svg'
 //CSS
-import "../assets/styles/footer.css";
+import "../assets/styles/Footer.css";
 
 function Footer() {
     return (

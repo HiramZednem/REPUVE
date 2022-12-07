@@ -8,7 +8,7 @@ import upload from "../assets/images/upload.svg";
 import registroPhoto from "../assets/images/registro-carro.png";
 import registreV from "../assets/images/image-registreV.svg";
 //CSS
-import "../assets/styles/registroCarro.css";
+import "../assets/styles/RegistroCarro.css";
 
 
 function RegistroCarro() {

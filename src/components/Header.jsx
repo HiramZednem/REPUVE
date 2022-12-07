@@ -1,5 +1,5 @@
 //CSS
-import "../assets/styles/header.css"
+import "../assets/styles/Header.css"
 //Imagenes Importadas
 import gobiernoLogo from "../assets/images/GobiernoMexico.svg";
 import userIcon from "../assets/images/MaleUser.svg";

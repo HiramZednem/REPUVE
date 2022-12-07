@@ -10,7 +10,7 @@ import gobiernoLogo from "../assets/images/GobiernoMexico.svg";
 import userIcon from "../assets/images/MaleUser.svg";
 
 //CCS
-import "../assets/styles/header.css";
+import "../assets/styles/Header.css";
 
 
 function HeaderWorker() {
@@ -69,13 +69,13 @@ function HeaderWorker() {
                         <img src={gobiernoLogo} alt="" id="LogoMx" />
                     </div>
                     <div className="col-2 opciones">
-                        <a href="/gob/registry/vehicle" className="link"> Registro Vehicular</a>
+                        <a href="/gob/vehicle/consult" className="link"> Registro Vehicular</a>
                     </div>
                     <div className="col-2 opciones">
                         <a href="/gob/vehicular/consult" className="link">Consulta Vehicular</a>  
                     </div>
                     <div className="col-2 opciones">
-                        <a href="/gob/vehicular/catalog" className="link">Lista Vehicular</a>
+                        <a href="/gob/worker/listcar" className="link">Lista Vehicular</a>
                     </div>
                     <div className="col-2"></div>
                     <div className="col-2 icons-div">
