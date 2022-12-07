@@ -1,6 +1,6 @@
-import {Header} from "../components/Header";
-import Footer from "../components/Footer.jsx";
-import PublicVehicleCard from "../components/PublicVehicleCard.jsx";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import PublicVehicleCard from "../components/PublicVehicleCard";
 
 function GeneralVehicleView() {
     return(

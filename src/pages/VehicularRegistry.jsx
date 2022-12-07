@@ -1,6 +1,6 @@
 import Footer from "../components/Footer.jsx";
-import {RegistroCarro} from "../components/RegistroCarro";
-import HeaderWorker from "../components/HeaderWorker.jsx";
+import RegistroCarro from "../components/RegistroCarro";
+import HeaderWorker from "../components/HeaderWorker";
 
 function VehicularRegistry() {
     return(

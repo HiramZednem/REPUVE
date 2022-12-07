@@ -5,7 +5,7 @@ function WorkerHome() {
     return(
         <>
             <HeaderWorker></HeaderWorker>
-          <WorkerHomeAviso></WorkerHomeAviso>
+            <WorkerHomeAviso></WorkerHomeAviso>
             <Footer></Footer>
         </>
     )

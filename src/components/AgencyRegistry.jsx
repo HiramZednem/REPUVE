@@ -39,16 +39,12 @@ function AgencyRegistry() {
                     phoneNumber:phoneNumber
                 })
             }
-          
             fetch('http://18.215.246.106:8080/agency', option)
                 .then(response=>response.json())
                 //CHECAR
                 .then(data=> data.status ? alert('Registro erronio'):alert('Registro Exitoso'))
                 .catch(err=>console.log('err'))
         }
-
-
-
     return (
         <>
         <div className='RegisterAgency'>
@@ -77,8 +73,8 @@ function AgencyRegistry() {
                 <img className='Agency' src={Agency} />
             </div>
         </div>
-     </>
-            );
+    </>
+    );
 }
 
 export default AgencyRegistry;

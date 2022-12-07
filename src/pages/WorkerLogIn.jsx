@@ -1,12 +1,12 @@
-import Footer from "../components/Footer.jsx";
-import {Header} from "../components/Header";
-import WorkerLogInComponent from "../components/WorkerLogInComponent.jsx";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import WorkerLogInComponent from "../components/WorkerLogInComponent";
 
 function WorkerLogIn() {
     return(
         <>
             <Header></Header>
-        <WorkerLogInComponent></WorkerLogInComponent>
+            <WorkerLogInComponent></WorkerLogInComponent>
             <Footer/>
         </>
     )

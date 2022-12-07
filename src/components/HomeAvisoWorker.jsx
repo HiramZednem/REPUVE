@@ -2,7 +2,7 @@ import '../assets/styles/homeAvisoWorker.css'
 function HomeAviso() {
     return(
         <>
-        <section className={"container-aviso"}>
+        <section className="container-aviso">
             <div className={"container-inf"}>
                 <h2 className={"h2-cont-avisoW"}>Aviso Importante</h2>
                 <p></p>

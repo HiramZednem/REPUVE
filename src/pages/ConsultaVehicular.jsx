@@ -1,19 +1,26 @@
+//Paginas Importadas
+import Header from "../components/Header";
 import ConsultaVehiculo from "../components/ConsultaVehicular";
-import HomeAviso from "../components/HomeAviso.jsx";
-import HomeAvisoWorker from "../components/HomeAvisoWorker";
-import QAConsulta from "../components/QAConsulta.jsx";
-import Footer from "../components/Footer.jsx";
-import {Header} from "../components/Header";
+import ConsultaAviso from "../components/ConsultaAviso";
+import QAConsulta from "../components/QAConsulta";
+import Footer from "../components/Footer";
+
 
 function ConsultaVehicular() {
     return(
         <>
-            <Header></Header>
-            <ConsultaVehiculo></ConsultaVehiculo>
-            <br/><QAConsulta></QAConsulta><br/>
-            <HomeAvisoWorker></HomeAvisoWorker>
-            <Footer></Footer>
+            <Header/>
+            <ConsultaVehiculo/>
+            <QAConsulta/>
+            <ConsultaAviso />
+            <Footer />
         </>
     );
 }
 export default ConsultaVehicular;
+
+/*<Header></Header>
+<ConsultaVehiculo></ConsultaVehiculo>
+<br/><QAConsulta></QAConsulta><br/>
+<HomeAvisoWorker></HomeAvisoWorker>
+<Footer></Footer>*/
