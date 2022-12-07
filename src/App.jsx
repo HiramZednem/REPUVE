@@ -20,6 +20,7 @@ import WorkerCardEdit from"./pages/WorkerCarEdit";
 import HomeWorker from "./pages/HomeWorker";
 import WorkerCarView from "./pages/WorkerCarView";
 import WorkerCarEdit from "./pages/WorkerCarEdit";
+import SingIn from "./pages/SingIn";
 //despues del pull
 import CarView from "./pages/CarView";
 import VehicularRegistry from "./pages/VehicularRegistry";
@@ -41,7 +42,7 @@ function App() {
                         <Route path={'/home'} element={<GeneralHome/>}/>
                         <Route path={'/vehicular/consult'} element={<ConsultaVehicular/>}/>
                         <Route path={'/vehicle/consult'} element={<CarView/>}/>
-                        <Route path={'/signUp'} element={<WorkerRegistrer/>}/>
+                        <Route path={'/signUp'} element={<SingIn/>}/>
                         <Route path={'/signIn'} element={<Login/>}/>
                         {/*/*/}
                         <Route element={<PrivateRoute/>}>
