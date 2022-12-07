@@ -47,6 +47,7 @@ function WorkerLogInComponent() {
             password:password
         })
 
+        console.log(user)
         console.log("hola "+dataJSON)
 
         const option = {
@@ -55,6 +56,7 @@ function WorkerLogInComponent() {
                 Accept: "*/*",
                 "Content-Type": "application/json",
                 Connection: "keep-alive",
+
             },
             body: dataJSON,
         };
